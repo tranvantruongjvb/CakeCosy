@@ -302,7 +302,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>	
-
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {	
@@ -311,25 +310,19 @@
 		            rules: {
 		                email: "required",
 		                 password:"required",
-		                 
-		              
 		            },
 		            messages: {
 		                email: "Nhập địa chỉ email", 
 		                 password: " Nhập mật khẩu để truy cập",                   
 		            }
-		        
 		        })
 			}); 
-
-
             $(document).on('click', '.getquan', function () {
                    var a = $(this).val();
                    var b = $(this).parent().parent().find('.getprice').text();
                    var id = $(this).parent().parent().find('#getid').text();
                    var c = $(this).parent().parent().find('.result').empty();
 					   c = $(this).parent().parent().find('.result').append(a*b);
-					   
 					$.ajax({
 			              type : 'post', 
 			              url : '\\cakecosy/updatequantity', 
