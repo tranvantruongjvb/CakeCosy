@@ -3034,7 +3034,7 @@ color:#000
 
 .beta-btn {
 color:#fff;
-border:1px solid  #57a7c6;
+border:1px solid  #f1be06;
 display:inline-block;
 padding:6px 20px
 }
@@ -3055,7 +3055,7 @@ line-height:100%
 
 .beta-btn.primary:hover {
 color:#fff;
-background:#3a5c83
+background:#f57011
 }
 
 .beta-btn.primary i {
