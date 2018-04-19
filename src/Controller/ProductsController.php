@@ -38,7 +38,10 @@ class ProductsController  extends AppController{
 	}
 	public function index()
 	{
+
 		$this->readtypeproduct();
+		$sl = TableRegistry::get('slides');
+		$slides= $sl->find('all');
 		$promotion = $this->Products->find("all")
 		->where( ['products.promotion_price >=' => 1])
 		->order(['products.id' => 'DESC']);
@@ -63,7 +66,7 @@ class ProductsController  extends AppController{
 		$price400 = $this->Products->find("all")
 		->where(['products.unit_price >=' => 300000])
 		->limit(LIMIT_PRODUCT_INDEX);
-		$this->set(compact('productnew','promotion_price','price100','price200','price300','price400'));
+		$this->set(compact('productnew','promotion_price','price100','price200','price300','price400','slides'));
 	}
 	public function viewMoreProduct($id)
 	{   
