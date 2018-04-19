@@ -413,10 +413,24 @@ class ProductsController  extends AppController{
 	{
 		$this->readtypeproduct();
 		$product = $this->Products->get($id);
-		$this->set('products', $product); 
+		$this->set('products', $product);
+
+		$c = TableRegistry::get('comments');
+		$comments = $c->find('all')
+		->join([
+			'table' => 'products',
+			'alias' => 'c',
+			'type' => 'LEFT',
+			'conditions' => array(
+				'c.id = comments.id',
+			)     
+		])
+		->where(['comments.product_id = ' =>$product->id])
+		->order(['comments.id' => 'desc'])
+		-> toArray();
 		$type = $this->Products->find("all")
 		->where(['products.id_type >=' => $product->id_type ]
-	);
+		);
 		$this->paginate= array(
 			'limit' => LIMIT_DETAIL_PRODUCT,
 			'order' => [
@@ -425,11 +439,48 @@ class ProductsController  extends AppController{
 		);
 		$producttype = $this->paginate($type);
 		$this->set('producttype',$producttype);
-		$new = $this->Products->find("all")
+		$productnew = $this->Products->find("all")
 		->limit('6')
 		->where(['products.new >=' => 1 ]);
-		$this->set('productnew',$new);
+		$this->set(compact('productnew','comments'));
 	}
+	public function comment()
+	{
+		// $getinfor = $this->Products->get($id);
+		// $getid = $getinfor->id;
+		$c = TableRegistry::get('comments');
+		$query = $c->find('all')
+		->order(['comments.id' => 'desc'])
+		-> toArray();
+
+		$this->set('comments',$query);
+	}
+
+	public function addComment($id)
+	{
+		$c = TableRegistry::get('comments');
+		$read_user = $this->request->session()->read('Auth.User');
+		$email =  $read_user['email'];
+		$data = $this->request->data();
+		$comment = $c->newEntity();
+		$comment['product_id'] = $id;
+		$comment['comment'] = $data['comment'];
+		$comment['email'] = $email;
+		$c->save($comment);
+		$this->redirect($this->referer());
+	}
+
+	public function deleteComment($id)
+	{	
+		$c = TableRegistry::get('comments');
+		$this->request->allowMethod(['post', 'delete']);
+		$comment = $c->get($id);
+		if ($this->Products->delete($comment)) {
+			$this->Flash->success(__('Bình luận id: {0} đã được xóa.', h($id)));
+			return $this->redirect($this->referer());
+		} 
+	}
+
 	public function addProduct()
 	{   
 		$this->readtypeproduct();
