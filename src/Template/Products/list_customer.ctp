@@ -31,7 +31,7 @@
 										<li class="nav-item " style="width: 12%;padding-top: 15px;padding-bottom: 15px;"><?php echo $cus->phone_number;?></a></li>
 										<li class="nav-item " style="width: 27%;padding-top: 15px;padding-bottom: 15px;"><?php echo $cus->address ?></a></li>
 										<li class="nav-item " style=" width: 10%;padding-top: 15px;padding-bottom: 15px;"><?php echo $cus->status ?></li>
-										<li class="nav-item " style=" width: 10%"><a style="width: 100%" href="\cakecosy/billdetail/<?php echo $cus->id ?>" >Chi tiết</a></li>
+										<li class="nav-item " style=" width: 10%"><a style="width: 100%" href="\cakecosy/billDetail/<?php echo $cus->id ?>" >Chi tiết</a></li>
 										<li class="nav-item " style=" width: 8%; ">
 											<a style="width: 100%" href="\cakecosy/deleteCustomer/<?php echo $cus->id ?>" >Xóa</a></li>
 										</ul>
