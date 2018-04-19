@@ -8,7 +8,8 @@ img {
 </style>
 <div class="inner-header">
 	<div class="container">
-		<div><?php $read =  $this->request->session()->read('cart.'.$products->id); ?> 
+		<div><?php $read_cart =  $this->request->session()->read('cart.'.$products->id); ?> 
+			 <?php $read_user = $this->request->session()->read('Auth.User') ?>
 		</div>
 		<div class="pull-left">
 			<h6 class="inner-title"><h2><?php echo $products->name ?></h2></h6>
@@ -41,13 +42,17 @@ img {
 								<?php } ?>
 							</p>
 						</div>
-						<div class="clearfix"></div>
-						<div class="space10">&nbsp;</div>
+						<div class="space5">&nbsp;</div>
 						<div class="single-item-desc">
 							<p style="color: #f90; font-size: 15px;">Miêu tả sản phẩm</p>
 							<p><?php echo $products->description; ?></p>
 						</div>
-						<div class="space20">&nbsp;</div>
+						<div class="space5">&nbsp;</div>
+						<div class="single-item-desc">
+							<p style="color: #f90; font-size: 15px;">Nguyên liệu</p>
+							<p><?php echo $products->source; ?></p>
+						</div>
+						<div class="space10">&nbsp;</div>
 						<div class="single-item-options">
 							<a class="add-to-cart" href="\cakecosy/getAddToCart/<?php echo $products->id ?>"><i class="fa fa-shopping-cart"></i></a>
 							<a class="beta-btn primary" href="\cakecosy/order"> Xem giỏ hàng <i class="fa fa-chevron-right"></i></a>
@@ -55,14 +60,40 @@ img {
 						</div>
 					</div>
 				</div>
-				<div class="space40">&nbsp;</div>
 				<div class="woocommerce-tabs">
 					<ul class="tabs">
-						<li><a href="#tab-description">Nguyên liệu</a></li>
+						<li><a href="#tab-description">Bình luận</a></li>
 					</ul>
 					<div class="panel" id="tab-description">
-						<p><?php echo $products->source; ?></p>
+						<form method="post" action="\cakecosy/products/addComment/<?php echo $products->id ?>">
+							<?php if (count($comments)==0) { ?>
+								<p>Chưa có bình luận nào. Hãy đăng nhập để bình luận</p>
+							<?php } ?>
+							<?php foreach ($comments as $key) {?>
+								<div style="border-radius: 5px;border: 1px solid #FFCC33;">
+									<p style="color: #f90; font-size: 15px;">&nbsp;&nbsp;<?php echo $key['email'] ?></p>
+									<a class="pull-right" style=" width: 5px; padding-right: 20px;" href="\cakecosy/products/deleteComment/<?php echo $key['id'] ?>"><i class="fa fa-times"></i></a>
+									<p>&nbsp;&nbsp;<?php echo $key['comment']?> </p>
+									<p style="font-size: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date_format($key['created_at'],'d/m/Y H:i:s')?></p>
+								</div>
+								<div class="space5">&nbsp;&nbsp;</div>
+							<?php } ?>
+							
+							<div class="panel" id="tab-description">
+								<?php if(!$read_user) {?>
+										<span>
+											<a class="beta-btn primary" href="\cakecosy/login">Đăng nhập để bình luận</a>
+										</span>
+								<?php }else {?>
+										<span>
+											<input type="text" name="comment" placeholder="Bình để bình luận">
+											<button type="submit" class=" beta-btn primary"> Bình luận</button>
+										</span>
+								<?php } ?>
+							</div>
+						</form>
 					</div>
+
 				</div>
 				<div class="space50">&nbsp;</div>
 				<div class="beta-products-list">
