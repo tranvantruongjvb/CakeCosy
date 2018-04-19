@@ -27,7 +27,7 @@ img {
 								<div class="col-sm-5 col-md-4 col-lg-3 ">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" >
+											<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" >
 											</a>
 										</div>
 										<div class="single-item-body">
