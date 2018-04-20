@@ -10,6 +10,6 @@
 	<p><?php echo $arrayName['pass'] ?></p>
 	<br>
 	<p>Nếu bạn không có yêu cầu này chúng tôi vô cùng xin lỗi</p>
-	<p>Phiền bạn lại CakeFood và đổi lại mật khẩu để an toàn hơn </p>
+	<p>Phiền bạn ghé thăm CakeFood và đổi lại mật khẩu để an toàn hơn </p>
 </body>
 </html>
