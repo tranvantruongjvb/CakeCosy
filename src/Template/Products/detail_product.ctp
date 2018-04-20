@@ -28,7 +28,7 @@ img {
 			<div class="col-sm-9 col-md-9">
 				<div class="row">
 					<div class="col-sm-6 col-md-5">
-						<a href="#" class="img"><img src="<?php echo '/cakecosy/'. $products->image;?>" height=" 252px" ></a>
+						<a href="#" class="img">&nbsp;&nbsp;<img src="<?php echo '/cakecosy/'. $products->image;?>" height=" 252px" ></a>
 					</div>
 					<div class="col-sm-6 col-md-5">
 						<div class="single-item-body">
@@ -72,7 +72,9 @@ img {
 							<?php foreach ($comments as $key) {?>
 								<div style="border-radius: 5px;border: 1px solid #FFCC33;">
 									<p style="color: #f90; font-size: 15px;">&nbsp;&nbsp;<?php echo $key['email'] ?></p>
+									<?php if($read_user['permission'] >=2) {?>
 									<a class="pull-right" style=" width: 5px; padding-right: 20px;" href="\cakecosy/products/deleteComment/<?php echo $key['id'] ?>"><i class="fa fa-times"></i></a>
+									<?php } ?>
 									<p>&nbsp;&nbsp;<?php echo $key['comment']?> </p>
 									<p style="font-size: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date_format($key['created_at'],'d/m/Y H:i:s')?></p>
 								</div>
