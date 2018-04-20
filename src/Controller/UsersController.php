@@ -176,7 +176,7 @@ class UsersController extends AppController{
 		$this->request->allowMethod(['post', 'delete']);
 		$user = $this->Users->get($id);
 		if ($this->Users->delete($user)) {
-			$this->Flash->success(__('Người Dùng Có Tên: {0} Đã Được Xóa.', h($name)));
+			$this->Flash->success(__('Người Dùng Có id: {0} Đã Được Xóa.', h($id)));
 			return $this->redirect($this->referer());
 		}		
 	}
