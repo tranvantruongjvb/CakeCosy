@@ -48,6 +48,7 @@ img{
 										<div class="add-to-cart pull-left">
 											<a href="\cakecosy/getAddToCart/<?php print_r($new['id']) ?>">
 												<i class="fa fa-shopping-cart"></i>
+                                            </a>
 											</div>
 											<div class="beta-btn primary">
 												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
