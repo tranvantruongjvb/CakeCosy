@@ -58,12 +58,12 @@ img {
 											<div class="beta-btn primary">
 												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
 											</div>
-											<div class="beta-btn primary"><a href="\cakecosy/detailProduct/<?php echo $new->id ?>">Chi Tiết</a>
+											<div class="beta-btn primary" style="width: 242px; text-align: center;"><a href="\cakecosy/detailProduct/<?php echo $new->id ?>"> Chi Tiết</a>
 											</div>
 											<?php  if ($permission == 2 || $permission == 3) {?>
-											<div class="beta-btn primary"><?php echo $this->Html->link('Chỉnh sửa',['action'=>'editProduct',$new->id])  ?></div>
+											<div class="beta-btn primary" style="width: 242px; text-align: center;"><?php echo $this->Html->link('Chỉnh sửa',['action'=>'editProduct',$new->id])  ?></div>
 											<div class="clearfix"></div>
-											<div class="beta-btn primary"><?= $this->Form->postLink(
+											<div class="beta-btn primary " style="width: 242px; text-align: center;"><?= $this->Form->postLink(
 												'Xóa sản phẩm',
 												['action' => 'delete', $new->id],
 												['confirm' => __('Bạn có chắc chắn muốn xóa sản phẩm có id # {0}?',$new->id)])
