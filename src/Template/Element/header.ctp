@@ -50,7 +50,7 @@
 						      <li class="nav-item dropdown">
 									<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-user-o"></i> Tài khoản <i class="fa fa-chevron-down"></i></a>
 									<ul class="dropdown-menu">
-										<li><a href="\cakecosy/products/customerBill/<?php echo $readuser['id'] ?>" class="dropdown-item">Đơn hàng đã mua </a></li>
+										<li><a href="\cakecosy/customerBill/<?php echo $readuser['id'] ?>" class="dropdown-item">Đơn hàng đã mua </a></li>
 										<li><a href="\cakecosy/editUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Cập nhật thông tin</a></li>								
 										<li><a href="\cakecosy/users/logout" class="dropdown-item"><i class="fa fa-sign-out"></i>Đăng Xuất</a></li>
 									</ul>
@@ -309,14 +309,14 @@
 		        {
 		            rules: {
 		                email: "required",
-		                 password:"required",
+		                 password:"required",  
 		            },
 		            messages: {
 		                email: "Nhập địa chỉ email", 
 		                 password: " Nhập mật khẩu để truy cập",                   
 		            }
 		        })
-			}); 
+			});
             $(document).on('click', '.getquan', function () {
                    var a = $(this).val();
                    var b = $(this).parent().parent().find('.getprice').text();
@@ -325,14 +325,13 @@
 					   c = $(this).parent().parent().find('.result').append(a*b);
 					$.ajax({
 			              type : 'post', 
-			              url : '\\cakecosy/updatequantity', 
+			              url : '\\cakecosy/updateQuantity', 
 			              data : {sl :a,
 			              	id: id,
 			              		}, 
 			              success : function(data)  
 			                         { 
-			                          
-			                        }
+			                         }
 			              });
             });
             $(document).on('click', '.getkey', function () {
