@@ -52,7 +52,7 @@
 				<div class="col-sm-3">
 					<div class="widget">
 						<h4 class="widget-title">Nhận tin Cake </h4=>
-						<form action="\cakecosy/getnews" method="post">
+						<form action="\cakecosy/getNew" method="post">
 							<input type="email" name="your_email" id="input" placeholder="cakecosy@gmail.com">
 							<button class="pull-right"  type="submit" id="getemail">Nhận Tin <i class="fa fa-chevron-right"></i></button>
 						</form>
