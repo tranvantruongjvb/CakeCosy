@@ -29,7 +29,7 @@ label {
 						<div class="row">
 							<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic"" src="<?php echo '/cakecosy/'. $product->image; ?>" class="img-responsive img" >
 							</div>
-							<div class="col-md-3 col-lg-3 "> 
+							<div class="col-md-8 col-lg-9 "> 
 								<table class="table table-user-information " >
 								
 										<?php echo $this->Form->create($product);{?>
