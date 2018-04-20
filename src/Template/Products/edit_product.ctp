@@ -18,7 +18,7 @@ label {
 				?>
 			</p>
 		</div>
-		<div class="col-xs-8 col-sm-8 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" style="text-align: center;" >
+		<div class="col-xs-12 col-sm-8 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" style="text-align: center;" >
 			<form method="post" enctype="multipart/form-data" id='myForm'>
 				<div class="panel panel-info">
 					<div class="panel-heading">
