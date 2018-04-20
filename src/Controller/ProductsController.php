@@ -47,7 +47,7 @@ class ProductsController  extends AppController{
 		for($i=1; $i <$count-3 ; $i++){ 
 			array_push($pr,$i);
 		}
-		$random_keys=array_rand($pr,4);
+		$random_keys=array_rand($pr,6);
 		$product_sale  = array();
 		foreach ($random_keys as $key ) {
 				if($key == 0){
