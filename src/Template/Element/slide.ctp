@@ -25,7 +25,7 @@
                 <ul class="col-sm-12">
                     <?php foreach ($product_sale as $key) { ?>
                     <li class="single-item1 col-sm-4" style="display: inline-block;">
-                        <span class="col-md-11" style="text-align: center;">
+                        <span class="col-md-12" style="text-align: center;">
                              <img style=" width: 100px; height: 100px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
                         </span>
                         <div class="space10">&nbsp;</div>
