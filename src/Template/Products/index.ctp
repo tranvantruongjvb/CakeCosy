@@ -8,8 +8,16 @@ img {
 		float: right;
 	}
 </style>
+
 <?php $permission = $this->request->session()->read('Auth.User')['permission'] ?>
 <div class="container">
+	<div class="Collapse">
+		 <?php 
+        echo $this->element("slide");
+   		 ?>
+	</div>
+	
+   
 	<div id="content" class="space-top-none">
 		<div class="main-content">
 			<div class="space60"></div>
@@ -24,7 +32,7 @@ img {
 						</div> 
 						<div>
 							<?php foreach($productnew as $new): {?>
-								<div class="col-sm-5 col-md-4 col-lg-3 ">
+								<div class="col-sm-6 col-md-4 col-lg-3 ">
 									<div class="single-item">
 										<div class="single-item-header">
 											<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" >
@@ -84,7 +92,7 @@ img {
 					</h4>
 					<div class="space30">&nbsp;</div>
 					<?php foreach($promotion_price as $new):?>
-						<div class="col-sm-5 col-md-4 col-lg-3 ">
+						<div class="col-sm-6 col-md-4 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
@@ -92,7 +100,7 @@ img {
 										<div class="ribbon sale">Sale</div>
 									</div>
 									<?php } ?>
-									<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
+									<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
 								</div>
 								<div class="single-item-body">
 									<p class="single-item-title"><?php echo $new->name ?></p>
@@ -107,7 +115,7 @@ img {
 								</div>
 								<div class="single-item-caption">
 									<div class="add-to-cart pull-left">
-										<a href="\cakecosy/products/getAddToCart/<?php echo $new->id ?>">
+										<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 											<i class="fa fa-shopping-cart"></i>
 										</a>
 									</div>
@@ -137,7 +145,7 @@ img {
 					<div class="space30">&nbsp;</div>				
 					<?php foreach($price100 as $new): 
 					?>
-					<div class="col-sm-5 col-md-4 col-lg-3 ">
+					<div class="col-sm-6 col-md-4 col-lg-3 ">
 						<div class="single-item">
 							<div class="single-item-header">
 								<?php if ($new->promotion_price !=0) {?>
@@ -145,7 +153,7 @@ img {
 									<div class="ribbon sale">Sale</div>
 								</div>
 								<?php } ?>
-								<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
+								<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
 							</div>
 							<div class="single-item-body">
 								<p class="single-item-title"><?php echo $new->name ?></p>
@@ -160,7 +168,7 @@ img {
 							</div>
 							<div class="single-item-caption">
 								<div class="add-to-cart pull-left">
-									<a href="\cakecosy/products/getAddToCart/<?php echo $new->id ?>">
+									<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 										<i class="fa fa-shopping-cart"></i>
 									</a>
 								</div>
@@ -190,7 +198,7 @@ img {
 					<div class="space30">&nbsp;</div>						
 					<?php foreach($price200 as $new): 
 					?>
-					<div class="col-sm-5 col-md-4 col-lg-3 ">
+					<div class="col-sm-6 col-md-4 col-lg-3 ">
 						<div class="single-item">
 							<div class="single-item-header">
 								<?php if ($new->promotion_price !=0) {?>
@@ -198,7 +206,7 @@ img {
 									<div class="ribbon sale">Sale</div>
 								</div>
 								<?php } ?>
-								<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
+								<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
 							</div>
 							<div class="single-item-body">
 								<p class="single-item-title"><?php echo $new->name ?></p>
@@ -213,7 +221,7 @@ img {
 							</div>
 							<div class="single-item-caption">
 								<div class="add-to-cart pull-left">
-									<a href="\cakecosy/products/getAddToCart/<?php echo $new->id ?>">
+									<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 										<i class="fa fa-shopping-cart"></i></a>
 									</div>
 									<div class="beta-btn primary">
@@ -242,7 +250,7 @@ img {
 						<div class="space30">&nbsp;</div>						
 						<?php foreach($price300 as $new): 
 						?>
-						<div class="col-sm-5 col-md-4 col-lg-3 ">
+						<div class="col-sm-6 col-md-4 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
@@ -250,7 +258,7 @@ img {
 										<div class="ribbon sale">Sale</div>
 									</div>
 									<?php } ?>
-									<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
+									<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
 								</div>
 								<div class="single-item-body">
 									<p class="single-item-title"><?php echo $new->name ?></p>
@@ -265,7 +273,7 @@ img {
 								</div>
 								<div class="single-item-caption">
 									<div class="add-to-cart pull-left">
-										<a href="\cakecosy/products/getAddToCart/<?php echo $new->id ?>">
+										<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 											<i class="fa fa-shopping-cart"></i></a>
 										</div>
 										<div class="beta-btn primary">
@@ -294,7 +302,7 @@ img {
 						<div class="space30">&nbsp;</div>
 						<?php foreach($price400 as $new): 
 						?>
-						<div class="col-sm-5 col-md-4 col-lg-3 ">
+						<div class="col-sm-6 col-md-4 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
@@ -302,7 +310,7 @@ img {
 										<div class="ribbon sale">Sale</div>
 									</div>
 									<?php } ?>
-									<a href="viewproduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
+									<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" ></a>
 								</div>
 								<div class="single-item-body">
 									<p class="single-item-title"><?php echo $new->name ?></p>
@@ -344,4 +352,7 @@ img {
 			</div>
 		</div>
 	</div>
+
 </div>
+
+ 
