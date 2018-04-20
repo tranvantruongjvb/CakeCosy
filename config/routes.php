@@ -84,7 +84,7 @@ $routes->resources('Topics');
     $routes->connect('/contact/',['controller'=>'users','action'=>'contact']);
     $routes->connect('/listUser/',['controller'=>'users','action'=>'listUser']);
     $routes->connect('/login/',['controller'=>'users','action'=>'login']);
-    $routes->connect('/detaiUser/*',['controller'=>'users','action'=>'detaiUser']);
+    $routes->connect('/detailUser/*',['controller'=>'users','action'=>'detailUser']);
     $routes->connect('/editUser/*',['controller'=>'users','action'=>'editUser']);
     $routes->connect('/addUser/',['controller'=>'users','action'=>'addUser']);
     $routes->connect('/forgetPass/',['controller'=>'users','action'=>'forgetPass']);
