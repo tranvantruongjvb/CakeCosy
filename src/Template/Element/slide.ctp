@@ -1,8 +1,9 @@
 <?= $this->Html->css('slide')?>
 <div class="container">
     <div class="col-sm-12 ">
-        <div class="space40">&nbsp;</div>
+        <div class="space30">&nbsp;</div>
         <div class="col-sm-6 pull-left ">
+            <div class="space50">&nbsp;</div>
             <div class="slideshow-container">
                 <?php foreach ($slides as $key) { ?>
                 <div class="mySlides fade">
@@ -24,7 +25,7 @@
                 <p style="color: #fb6108;font-size: 18px;"><span>Sản phẩm nhiều khách hàng chọn</span></p>
                 <ul class="col-sm-12">
                     <?php foreach ($product_sale as $key) { ?>
-                    <li class="single-item1 col-sm-4" style="display: inline-block;">
+                    <li class="single-item1 col-sm-4 " style="display: inline-block; width: 156px;height: 205.83px;">
                         <span class="col-md-12" style="text-align: center;">
                              <img style=" width: 100px; height: 100px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
                         </span>
