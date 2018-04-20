@@ -75,7 +75,7 @@ $routes->resources('Topics');
     $routes->connect('/billDetail/*',['controller'=>'products','action'=>'billDetail']);
     $routes->connect('/getAddToCart/*',['controller'=>'products','action'=>'getAddToCart']);
     $routes->connect('/customerBill/*',['controller'=>'products','action'=>'customerBill']);
-    
+    $routes->connect('/updateStatus/*',['controller'=>'products','action'=>'updateStatus']);
     
     
 
