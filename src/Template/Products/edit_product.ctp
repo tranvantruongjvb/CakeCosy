@@ -6,6 +6,7 @@ label {
 	border-radius: 15px;
 	height: 200px;
 }
+
 </style>
 <div class="container">
 	<div class="row">
@@ -28,9 +29,9 @@ label {
 						<div class="row">
 							<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic"" src="<?php echo '/cakecosy/'. $product->image; ?>" class="img-responsive img" >
 							</div>
-							<div class=" col-md-9 col-lg-9 "> 
-								<table class="table table-user-information">
-									<tbody>
+							<div class="col-md-3 col-lg-3 "> 
+								<table class="table table-user-information " >
+								
 										<?php echo $this->Form->create($product);{?>
 										<tr>
 											<td>Tên sản phẩm : </td>
@@ -38,7 +39,7 @@ label {
 										</tr>
 										<tr>
 											<td>Loại sản phẩm : </td>
-											<td><select name="id_type">
+											<td "><select name="id_type">
 												<option value="<?php echo $product->id_type ?>">
 													<?php echo $getname ?>
 												</option> 
@@ -101,7 +102,7 @@ label {
 										<td><input type="date" value="<?php echo date('Y-m-d'); ?>" /></td>
 									</tr>
 									<?php } ?>
-								</tbody>
+							
 							</table>
 						</div>
 					</div>
