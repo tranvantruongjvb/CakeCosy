@@ -49,6 +49,52 @@ class UsersController extends AppController{
 		$session->destroy();
 		$this->redirect(URL_INDEX);
 	}
+
+	public function contact()
+	{
+		$this->readTypeproduct();
+		if($this->request->is('post')) {
+			$data =$this->request->data();
+			$name = $this->request->data['your-name'];
+			$email = $this->request->data['your-email'];
+			$subject = $this->request->data['your-subject'];
+			$message = $this->request->data['your-message'];
+			$array  = array('name'=>$name,'email'=>$email,'subject'=>$subject, 'message'=>$message );
+			$this->Email->sendUserEmail($email,'CakeFoody',$array,'contact');
+			$this->Flash->success(__('Cảm Ơn Bạn Đã Góp Ý Cho CakeFoody '.$name ));
+			$this->redirect(URL_INDEX);	
+		}
+	}
+	public function introducttion()
+	{
+		$this->readTypeproduct();
+	}
+	public function news()
+	{	
+		$product = TableRegistry::get('products');
+		$sl = TableRegistry::get('slides');
+		$slides= $sl->find('all');
+		$count = count($product->find('all')->toArray());
+		$pr  = array();
+		for($i=1; $i <$count-3 ; $i++){ 
+			array_push($pr,$i);
+		}
+		$random_keys=array_rand($pr,6);
+		$product_sale  = array();
+
+		foreach ($random_keys as $key ) {
+				if($key == 0){
+					$key = $count-1;
+				}
+				$image = $product->get($key);
+				array_push($product_sale,$image);
+		}
+
+		$this->readTypeproduct();
+		$new = TableRegistry::get('news');
+		$news = $new->find('all')-> toArray();
+		$this->set(compact('news','product_sale')); 
+	}
 	public function listUser()
 	{
 		$this->readTypeproduct();
@@ -99,21 +145,6 @@ class UsersController extends AppController{
 				}
 			}
 		}   
-	}
-	public function contact()
-	{
-		$this->readTypeproduct();
-		if($this->request->is('post')) {
-			$data =$this->request->data();
-			$name = $this->request->data['your-name'];
-			$email = $this->request->data['your-email'];
-			$subject = $this->request->data['your-subject'];
-			$message = $this->request->data['your-message'];
-			$array  = array('name'=>$name,'email'=>$email,'subject'=>$subject, 'message'=>$message );
-			$this->Email->sendUserEmail($email,'CakeFoody',$array,'contact');
-			$this->Flash->success(__('Cảm Ơn Bạn Đã Góp Ý Cho CakeFoody '.$name ));
-			$this->redirect(URL_INDEX);	
-		}
 	}
 	public function userView()
 	{
