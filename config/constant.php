@@ -3,4 +3,6 @@
 	define('LIMIT_LISR_USER', '8');
 	define('LIMIT_PRODUCT_INDEX', '4');
 	define('LIMIT_DETAIL_PRODUCT', '10');
+	define('LIMIT_TYPE_PRODUCT', '8');
+
 ?>
