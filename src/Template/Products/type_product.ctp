@@ -10,12 +10,22 @@ img{
 				<div class="space60">&nbsp;</div>
 				<div class="row">
 					<div class="col-sm-3" >
+						<h4>Danh Mục bánh</h4>
 						<ul class="aside-menu primary-nav">
 							<?php foreach ($typeproducts as $type) { ?>
 							<li>
 								<a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
 							</li>
 							<?php } ?>
+						</ul>
+						<div class="space60">&nbsp;</div>
+						<h4>Sản phẩm Theo giá</h4>
+						<ul class="aside-menu primary-nav">
+							<li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -70,6 +80,12 @@ img{
 									</div>
 								<?php endforeach; ?>
 							</div>
+						<div class="clearfix"></div>
+						<div>
+							<ul class="pagination">
+								<li> <?=  $this->Paginator->numbers(array('class'=> 'pagination_link')); //Shows the page numbers?></li>
+							</ul>
+						</div>
 						</div>
 					</div>
 				</div>
