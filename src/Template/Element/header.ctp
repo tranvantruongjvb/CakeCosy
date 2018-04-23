@@ -143,10 +143,7 @@
 		</div> <!-- .header-body -->
 		<div class="header-bottom" style="background-color:#ef7e30 ">
 			<div class="container ">
-				
 				<div class="visible-xs clearfix ">
-
-					
 					<div class="pull-left" style="padding-top: 10px; width: 100%">
 							<a href="\cakecosy/index" id="logo"><img src="/cakecosy/webroot/img/foody-vn.png" style ="width:100px; height: 50%"></a>
 							<div class="space10">&nbsp;</div>
@@ -280,15 +277,8 @@
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a><i class="fa fa-retweet" style="color: white"></i>Sản Phẩm Theo Giá</a>
-							<ul class="sub-menu" style="z-index: 999; text-align: left;">
-								<li><a href="\cakecosy/viewMoreProduct/90000">Sản Phẩm dưới 100,000đ</a></li>
-								<li><a href="\cakecosy/viewMoreProduct/150000">Sản Phẩm 100,000đ - 2000,000đ</a></li>
-								<li><a href="\cakecosy/viewMoreProduct/230000">Sản Phẩm 200,000đ - 3000,000đ</a></li>
-								<li><a href="\cakecosy/viewMoreProduct/300000">Sản Phẩm 300,000đ</a></li>
-							</ul>
-						</li>
 						<li><a href="\cakecosy/contact"><i class="fa fa-volume-control-phone" style="color: white"></i>Liên Hệ</a></li>
+						<li><a href="\cakecosy/Users/introducttion"><i class="fa fa-volume-control-phone" style="color: white"></i>Giới thiệu</a></li>
 						<li><a ><i class="fa fa-volume-control-phone" style="color: white"></i>Hotline 0978172195</a></li>
 						 
 					</ul>
