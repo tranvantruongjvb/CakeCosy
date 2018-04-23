@@ -38,7 +38,6 @@ class ProductsController  extends AppController{
 	}
 	public function index()
 	{
-
 		$this->readtypeproduct();
 		$sl = TableRegistry::get('slides');
 		$slides= $sl->find('all');
@@ -47,7 +46,7 @@ class ProductsController  extends AppController{
 		for($i=1; $i <$count-3 ; $i++){ 
 			array_push($pr,$i);
 		}
-		$random_keys=array_rand($pr,6);
+		$random_keys=array_rand($pr,4);
 		$product_sale  = array();
 		foreach ($random_keys as $key ) {
 				if($key == 0){
@@ -56,7 +55,6 @@ class ProductsController  extends AppController{
 				$image = $this->Products->get($key);
 				array_push($product_sale,$image);
 		}
-
 		$promotion = $this->Products->find("all")
 		->where( ['products.promotion_price >=' => 1])
 		->order(['products.id' => 'DESC']);
@@ -81,9 +79,6 @@ class ProductsController  extends AppController{
 		$price400 = $this->Products->find("all")
 		->where(['products.unit_price >=' => 300000])
 		->limit(LIMIT_PRODUCT_INDEX);
-
-		
-
 		$this->set(compact('productnew','promotion_price','price100','price200','price300','price400','slides','product_sale'));
 	}
 	public function viewMoreProduct($id)
@@ -95,54 +90,69 @@ class ProductsController  extends AppController{
 		}else{
 			$sort ='thấp';
 		}
-		if($id ==1 ){
-			$products = $this->Products->find('all')
+		if($id ==11 ){
+			$find = $this->Products->find('all')
 			->where(['products.promotion_price >' =>0]);
 			if($sort == 'thấp'){
-				$products->order(['products.promotion_price' => 'asc']);
+				$find->order(['products.promotion_price' => 'asc']);
 			}else {
-				$products->order(['products.promotion_price' => 'desc']);
+				$find->order(['products.promotion_price' => 'desc']);
 			}
+			$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,);
+			$products = $this->paginate($find);
 			$name =" Sản Phẩm Khuyến Mãi";
 		}else if($id <100000 ){
-			$products = $this->Products->find('all')
+			$find = $this->Products->find('all')
 			->where(['products.unit_price <' =>100000]);
 			if($sort  == 'thấp'){
-				$products->order(['products.promotion_price' => 'asc']);
+				$find->order(['products.promotion_price' => 'asc']);
 			}else {
-				$products->order(['products.promotion_price' => 'desc']);   
+				$find->order(['products.promotion_price' => 'desc']);   
 			}
+			$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,);
+			$products = $this->paginate($find);
 			$name =" Sản Phẩm Có Giá Nhỏ hơn 100,000đ ";
 		}else if($id >= 100000 && $id <200000 ){
-			$products = $this->Products->find('all')
+			$find = $this->Products->find('all')
 			->where(['products.unit_price <=' =>200000, 'products.unit_price >=' =>100000]);
 			if($sort  == 'thấp'){
-				$products->order(['products.promotion_price' => 'asc']);
+				$find->order(['products.promotion_price' => 'asc']);
 			}else {
-				$products->order(['products.promotion_price' => 'desc']);
+				$find->order(['products.promotion_price' => 'desc']);
 			}
+			$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,);
+			$products = $this->paginate($find);
 			$name =" Sản Phẩm Có Giá Từ 100,000đ Đến 200,000đ ";
 		}else if($id >= 200000 && $id <300000){
-			$products = $this->Products->find('all')
+			$find = $this->Products->find('all')
 			->where(['products.unit_price <=' =>300000, 'products.unit_price >' =>200000]);
 			if($sort  == 'thấp'){
-				$products->order(['products.promotion_price' => 'asc']);
+				$find->order(['products.promotion_price' => 'asc']);
 			}else {
-				$products->order(['products.promotion_price' => 'desc']);
+				$find->order(['products.promotion_price' => 'desc']);
 			}
+			$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,);
+			$products = $this->paginate($find);
 			$name =" Sản Phẩm Có Giá Từ 200,000đ Đến 300,000đ ";
 		}else if($id >= 300000 ){
-			$products = $this->Products->find('all')
+			$find = $this->Products->find('all')
 			->where(['products.unit_price >' =>300000]);
 			if($sort  == 'thấp'){
-				$products->order(['products.promotion_price' => 'asc']);
+				$find->order(['products.promotion_price' => 'asc']);
 			}else {
-				$products->order(['products.promotion_price' => 'desc']);
+				$find->order(['products.promotion_price' => 'desc']);
 			}
+			$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,);
+			$products = $this->paginate($find);
 			$name =" Sản Phẩm Có Giá Lớn Hơn 300,000đ ";
 		}
-		$products1 = $products->toArray();
-		$this->set(compact('products1','name'));
+		$viewmoreproducts = $products->toArray();
+		$this->set(compact('viewmoreproducts','name'));
 	}
 	public function getAddToCart($id){
 		$product = $this->Products->get($id);
@@ -262,7 +272,7 @@ class ProductsController  extends AppController{
 		$find = $customer->find('all')
 		->order(['customer.id' =>'desc']);
 		$this->paginate= array(
-			'limit' => 8,
+			'limit' => LIMIT_LISR_USER,
 		);
 		$customers = $this->paginate($find);
 		$bills = $bill->find('all');
@@ -417,7 +427,7 @@ class ProductsController  extends AppController{
 		$this->readtypeproduct();
 		$typeProducts = TableRegistry::get('typeproducts');
 		$gettype = $typeProducts->get($id)->id;
-		$getproduct = $this->Products->find("all")
+		$getpro = $this->Products->find("all")
 		->hydrate(false)
 		->join([
 			'table' => 'typeProducts',
@@ -428,6 +438,10 @@ class ProductsController  extends AppController{
 			)     
 		])
 		->where(['products.id_type =' => $gettype ]);
+		$this->paginate= array(
+			'limit' => LIMIT_DETAIL_PRODUCT,
+		);
+		$getproduct = $this->paginate($getpro);
 		$this->set(compact("typeproducts", "getproduct"));
 	}
 	public function detailProduct($id)
@@ -467,8 +481,6 @@ class ProductsController  extends AppController{
 	}
 	public function comment()
 	{
-		// $getinfor = $this->Products->get($id);
-		// $getid = $getinfor->id;
 		$c = TableRegistry::get('comments');
 		$query = $c->find('all')
 		->order(['comments.id' => 'desc'])
