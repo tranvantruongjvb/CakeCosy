@@ -1,12 +1,14 @@
 <style type="text/css">
-img {
-	border:none;
-	max-width:100%;
-	border-radius: 10px;
-	height: 250px;}
 	.ribbon-wrapper {
 		float: right;
 	}
+/*@media only screen and (max-width: 480px) and (min-width: 320px){
+  img{
+  		max-width: 95%
+      height: 100px;
+  }
+
+}*/
 </style>
 
 <?php $permission = $this->request->session()->read('Auth.User')['permission'] ?>
@@ -22,7 +24,7 @@ img {
 		<div class="main-content">
 			<div class="space40"></div>
 			<div>
-				<div class=" col-sm-12 col-md-12 col-lg-12 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 					<div class="beta-products-list">
 						<div class="clearfix"></div>
 						<div class="space50">&nbsp;</div>
@@ -32,7 +34,7 @@ img {
 						</div> 
 						<div>
 							<?php foreach($productnew as $new): {?>
-								<div class="col-sm-6 col-md-4 col-lg-3 ">
+								<div class=" col-sm-3 col-md-3 col-lg-3" >
 									<div class="single-item">
 										<div class="single-item-header">
 											<a href="\cakecosy/detailProduct/<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" >
@@ -55,7 +57,7 @@ img {
 													<i class="fa fa-shopping-cart"></i>
 												</a>
 											</div>
-											<div class="beta-btn primary">
+											<div class="beta-btn primary" style="max-width: 140px;">
 												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
 											</div>
 											<div class="beta-btn primary"><a href="\cakecosy/detailProduct/<?php echo $new->id ?>"> Chi Tiết</a>
@@ -92,7 +94,7 @@ img {
 					</h4>
 					<div class="space30">&nbsp;</div>
 					<?php foreach($promotion_price as $new):?>
-						<div class="col-sm-6 col-md-4 col-lg-3 ">
+						<div class="col-sm-3 col-md-3 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
@@ -145,7 +147,7 @@ img {
 					<div class="space30">&nbsp;</div>				
 					<?php foreach($price100 as $new): 
 					?>
-					<div class="col-sm-6 col-md-4 col-lg-3 ">
+					<div class="col-sm-3 col-md-3 col-lg-3 ">
 						<div class="single-item">
 							<div class="single-item-header">
 								<?php if ($new->promotion_price !=0) {?>
@@ -198,7 +200,7 @@ img {
 					<div class="space30">&nbsp;</div>						
 					<?php foreach($price200 as $new): 
 					?>
-					<div class="col-sm-6 col-md-4 col-lg-3 ">
+					<div class="col-sm-3 col-md-3 col-lg-3 ">
 						<div class="single-item">
 							<div class="single-item-header">
 								<?php if ($new->promotion_price !=0) {?>
@@ -250,7 +252,7 @@ img {
 						<div class="space30">&nbsp;</div>						
 						<?php foreach($price300 as $new): 
 						?>
-						<div class="col-sm-6 col-md-4 col-lg-3 ">
+						<div class="col-sm-3 col-md-3 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
@@ -302,7 +304,7 @@ img {
 						<div class="space30">&nbsp;</div>
 						<?php foreach($price400 as $new): 
 						?>
-						<div class="col-sm-6 col-md-4 col-lg-3 ">
+						<div class="col-sm-3 col-md-3 col-lg-3 ">
 							<div class="single-item">
 								<div class="single-item-header">
 									<?php if ($new->promotion_price !=0) {?>
