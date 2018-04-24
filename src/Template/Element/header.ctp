@@ -36,10 +36,12 @@
 										<li><a href="\cakecosy/listCustomer" class="dropdown-item">Danh sách đơn hàng</a></li>
 										<?php if($readuser['permission'] == 3){ ?>
 										<li><a href="\cakecosy/listUser" class="dropdown-item">Danh sách người dùng </a></li>
+										<li><a href="\cakecosy/news/listNews" class="dropdown-item">Danh sách tin tức </a></li>
 										<?php } ?>
 										<li><a href="\cakecosy/detailUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Thông tin tài khoản </a></li>
 										<li><a href="\cakecosy/editUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Cập nhật thông tin </a></li>
 										<li><a href="\cakecosy/addProduct" class="dropdown-item">Thêm sản phẩm</a></li>
+										<li><a href="\cakecosy/news/addNews" class="dropdown-item">Thêm bài viết</a></li>
 										<li><a href="\cakecosy/addUser" class="dropdown-item">Thêm Thành Viên</a></li>
 										<li><a href="\cakecosy/users/logout" class="dropdown-item">Đăng Xuất</a></li>
 									</ul>
@@ -165,6 +167,7 @@
 										<li><a href="\cakecosy/detailUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Thông tin tài khoản </a></li>
 										<li><a href="\cakecosy/editUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Cập nhật thông tin </a></li>
 										<li><a href="\cakecosy/addProduct" class="dropdown-item">Thêm sản phẩm</a></li>
+										<li><a href="\cakecosy/news/addNews" class="dropdown-item">Thêm bài viết</a></li>
 										<li><a href="\cakecosy/addUser" class="dropdown-item">Thêm Thành Viên</a></li>
 										<li><a href="\cakecosy/users/logout" class="dropdown-item">Đăng Xuất</a></li>
 									</ul>
@@ -277,9 +280,10 @@
 								<?php } ?>
 							</ul>
 						</li>
+						<li><a href="\cakecosy/news"><i style="color: white"></i>Tin tức</a></li>
+						<li><a href="\cakecosy/introducttion"><i class="fa fa-volume-control-phone" style="color: white"></i>Giới thiệu</a></li>
 						<li><a href="\cakecosy/contact"><i class="fa fa-volume-control-phone" style="color: white"></i>Liên Hệ</a></li>
-						<li><a href="\cakecosy/Users/introducttion"><i class="fa fa-volume-control-phone" style="color: white"></i>Giới thiệu</a></li>
-						<li><a ><i class="fa fa-volume-control-phone" style="color: white"></i>Hotline 0978172195</a></li>
+						
 						 
 					</ul>
 					<div class="clearfix"></div>
