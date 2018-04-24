@@ -23,6 +23,11 @@
     font-size: 14px;
     text-decoration: none;
 }
+ img{
+    border-radius: 10px;
+    max-width: 95%;
+    max-height: 200px;
+}
 .category-item li a i{
  color: #f90;
 }
@@ -38,7 +43,7 @@
 <div class="container">
     <div class="col-sm-12 ">
         <div class="space30">&nbsp;</div>
-        <div class="col-sm-3 pull-left ">
+        <div class="col-sm-4 pull-left ">
             <div class="space50">&nbsp;</div>
             <div class="slideshow-container">
                 <?php foreach ($slides as $key) { ?>
@@ -56,13 +61,13 @@
                 <span class="dot" onclick="currentSlide(2)"></span> 
             </div> 
         </div>
-       <div id="feature-right" class="col-sm-5 abcde" style="padding-top: 40px;">
+       <div id="feature-right" class="col-sm-4 abcde" style="padding-top: 40px;">
             <div id="most-read" >
                 <p style="color: #fb6108;font-size: 18px;"><span>Sản phẩm nhiều khách hàng chọn</span></p>
                 <ul class="col-sm-12">
                     <?php foreach ($product_sale as $key) { ?>
-                    <li class="single-item1 col-sm-3 " style="display: inline-block; width: 156px;height: 205.83px;">
-                        <span class="col-md-11" style="text-align: center;">
+                    <li class="single-item1 col-sm-6 " style="display: block">
+                        <span class="" style="text-align: center;">
                              <a href="\cakecosy/detailProduct/<?php echo $key['id'] ?>">
                                  <img style=" width: 100px; height: 100px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
                              </a>
@@ -79,7 +84,7 @@
         </div>
         
     
-            <div class="category-item col-sm-3 " style="padding-top: 40px;" >
+            <div class="category-item col-sm-4 " style="padding-top: 40px;" >
                     <div class="row clear-fix1 ">
                             <div class=" col-sm-6 col-xs-6" >
                             <h3 >Tìm kiếp phổ biến</h3>
