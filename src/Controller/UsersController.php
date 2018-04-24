@@ -69,32 +69,7 @@ class UsersController extends AppController{
 	{
 		$this->readTypeproduct();
 	}
-	public function news()
-	{	
-		$product = TableRegistry::get('products');
-		$sl = TableRegistry::get('slides');
-		$slides= $sl->find('all');
-		$count = count($product->find('all')->toArray());
-		$pr  = array();
-		for($i=1; $i <$count-3 ; $i++){ 
-			array_push($pr,$i);
-		}
-		$random_keys=array_rand($pr,6);
-		$product_sale  = array();
-
-		foreach ($random_keys as $key ) {
-				if($key == 0){
-					$key = $count-1;
-				}
-				$image = $product->get($key);
-				array_push($product_sale,$image);
-		}
-
-		$this->readTypeproduct();
-		$new = TableRegistry::get('news');
-		$news = $new->find('all')-> toArray();
-		$this->set(compact('news','product_sale')); 
-	}
+	
 	public function listUser()
 	{
 		$this->readTypeproduct();
@@ -131,22 +106,21 @@ class UsersController extends AppController{
 				$this->Flash->error(__('Email bạn nhập không khớp với bất kỳ tài khoản nào.'));
 				return $this->redirect($this->referer());
 			}else{
-				$p = md5((implode("",$pass)));
+
+				$p = (implode("",$pass));
 				$getinfo['password'] = $p  ;
+
 				if($this->Users->save($getinfo))
 				{
-					$array  = array('pass'=>$p );
+					$array  = array('pass'=>$p);
 					$this->Email->sendUserEmail($email,'Forgetpass',$array,'forgetpass');
 					$this->Flash->success(__(' Mật khẩu mới đã gửi tới email của bạn. Hãy truy cập email để đăng nhập .'));
-				}
-				else{
-					$this->Flash->error(__('Lỗi rồi.'));
-					return $this->redirect($this->referer());
+					return $this->redirect(URL_INDEX);
 				}
 			}
 		}   
 	}
-	public function userView()
+	public function detailUser()
 	{
 		$this->readTypeproduct();
 		$user = $this->Users->get($this->Auth->user('id'));
