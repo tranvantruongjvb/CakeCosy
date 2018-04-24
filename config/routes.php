@@ -59,36 +59,43 @@ $routes->resources('Topics');
 
     // Product
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-    $routes->connect('/index/',['controller'=>'products','action'=>'index']);
-    $routes->connect('/addProduct/',['controller'=>'products','action'=>'addProduct']);
-    $routes->connect('/editProduct/*',['controller'=>'products','action'=>'editProduct']);
-    $routes->connect('/typeProduct/*',['controller'=>'products','action'=>'typeProduct']);
-    $routes->connect('/getSearch/*',['controller'=>'products','action'=>'getSearch']);
-    $routes->connect('/detailProduct/*',['controller'=>'products','action'=>'detailProduct']);   
-    $routes->connect('/postCheckout/',['controller'=>'products','action'=>'postCheckout']);
-    $routes->connect('/getNew/',['controller'=>'products','action'=>'getNew']);
-    $routes->connect('/updateQuantity/',['controller'=>'products','action'=>'updateQuantity']);
-    $routes->connect('/order/',['controller'=>'products','action'=>'order']);
-    $routes->connect('/listCustomer/',['controller'=>'products','action'=>'listCustomer']);
-    $routes->connect('/viewMoreProduct/*',['controller'=>'products','action'=>'viewMoreProduct']);
-    $routes->connect('/sort/*',['controller'=>'products','action'=>'sort']);
-    $routes->connect('/billDetail/*',['controller'=>'products','action'=>'billDetail']);
-    $routes->connect('/getAddToCart/*',['controller'=>'products','action'=>'getAddToCart']);
-    $routes->connect('/customerBill/*',['controller'=>'products','action'=>'customerBill']);
-    $routes->connect('/updateStatus/*',['controller'=>'products','action'=>'updateStatus']);
+    $routes->connect('/index/',['controller'=>'Products','action'=>'index']);
+    $routes->connect('/addProduct/',['controller'=>'Products','action'=>'addProduct']);
+    $routes->connect('/editProduct/*',['controller'=>'Products','action'=>'editProduct']);
+    $routes->connect('/typeProduct/*',['controller'=>'Products','action'=>'typeProduct']);
+    $routes->connect('/getSearch/*',['controller'=>'Products','action'=>'getSearch']);
+    $routes->connect('/detailProduct/*',['controller'=>'Products','action'=>'detailProduct']);   
+    $routes->connect('/postCheckout/',['controller'=>'Products','action'=>'postCheckout']);
+    $routes->connect('/getNew/',['controller'=>'Products','action'=>'getNew']);
+    $routes->connect('/updateQuantity/',['controller'=>'Products','action'=>'updateQuantity']);
+    $routes->connect('/order/',['controller'=>'Products','action'=>'order']);
+    $routes->connect('/listCustomer/',['controller'=>'Products','action'=>'listCustomer']);
+    $routes->connect('/viewMoreProduct/*',['controller'=>'Products','action'=>'viewMoreProduct']);
+    $routes->connect('/sort/*',['controller'=>'Products','action'=>'sort']);
+    $routes->connect('/billDetail/*',['controller'=>'Products','action'=>'billDetail']);
+    $routes->connect('/getAddToCart/*',['controller'=>'Products','action'=>'getAddToCart']);
+    $routes->connect('/customerBill/*',['controller'=>'Products','action'=>'customerBill']);
+    $routes->connect('/updateStatus/*',['controller'=>'Products','action'=>'updateStatus']);
     
     
 
 
     // User
-    $routes->connect('/contact/',['controller'=>'users','action'=>'contact']);
-    $routes->connect('/listUser/',['controller'=>'users','action'=>'listUser']);
-    $routes->connect('/login/',['controller'=>'users','action'=>'login']);
-    $routes->connect('/detailUser/*',['controller'=>'users','action'=>'detailUser']);
-    $routes->connect('/editUser/*',['controller'=>'users','action'=>'editUser']);
-    $routes->connect('/addUser/',['controller'=>'users','action'=>'addUser']);
-    $routes->connect('/forgetPass/',['controller'=>'users','action'=>'forgetPass']);
+    $routes->connect('/contact/',['controller'=>'Users','action'=>'contact']);
+    $routes->connect('/listUser/',['controller'=>'Users','action'=>'listUser']);
+    $routes->connect('/login/',['controller'=>'Users','action'=>'login']);
+    $routes->connect('/detailUser/*',['controller'=>'Users','action'=>'detailUser']);
+    $routes->connect('/editUser/*',['controller'=>'Users','action'=>'editUser']);
+    $routes->connect('/addUser/',['controller'=>'Users','action'=>'addUser']);
+    $routes->connect('/forgetPass/',['controller'=>'Users','action'=>'forgetPass']);
+    $routes->connect('/introducttion/',['controller'=>'Users','action'=>'introducttion']);
 
+    // News
+     $routes->connect('/news/',['controller'=>'News','action'=>'news']);
+     $routes->connect('/editNews/*',['controller'=>'News','action'=>'editNews']);
+     $routes->connect('/addnews/',['controller'=>'News','action'=>'addnews']);
+     $routes->connect('/detailNews/',['controller'=>'News','action'=>'detailNews']);
+     $routes->connect('/listNews/',['controller'=>'News','action'=>'listNews']);
 
     /**
      * Connect catchall routes for all controllers.
