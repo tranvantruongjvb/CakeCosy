@@ -111,6 +111,8 @@ img {
 border:none;
 max-width:100%
 border-radius: 10px;
+height: 250px;
+
 }
 
 textarea:focus,input:focus,select:focus,a:focus {
