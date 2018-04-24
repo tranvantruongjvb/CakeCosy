@@ -4,7 +4,6 @@
     .category-item{
 
 }
-
 .category-item h3 {
     color: #f90;
     text-align: left;
@@ -38,6 +37,13 @@
     padding: 1px
     border-radius:20px;
 }
+@media screen and (min-width: 1025px){
+  .li{
+    height: 165px;
+    width: 170px;
+  }
+}
+
 
 </style>
 <div class="container">
@@ -66,14 +72,14 @@
                 <p style="color: #fb6108;font-size: 18px;"><span>Sản phẩm nhiều khách hàng chọn</span></p>
                 <ul class="col-sm-12">
                     <?php foreach ($product_sale as $key) { ?>
-                    <li class="single-item1 col-sm-6 " style="display: block">
-                        <span class="" style="text-align: center;">
+                    <li class="single-item1 col-sm-5 li" >
+                        <span>
                              <a href="\cakecosy/detailProduct/<?php echo $key['id'] ?>">
                                  <img style=" width: 100px; height: 100px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
                              </a>
                         </span>
                         <div class="space10">&nbsp;</div>
-                        <span style="text-align: center;">
+                        <span >
                              <p><?php echo $key['name'] ?></p>
                         </span>
                         
