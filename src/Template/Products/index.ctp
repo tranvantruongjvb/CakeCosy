@@ -57,8 +57,8 @@
 													<i class="fa fa-shopping-cart"></i>
 												</a>
 											</div>
-											<div class="beta-btn primary" style="max-width: 140px;">
-												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+											<div class="beta-btn primary" style="width: 158px;">
+												<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 											</div>
 											<div class="beta-btn primary"><a href="\cakecosy/detailProduct/<?php echo $new->id ?>"> Chi Tiết</a>
 											</div>
@@ -121,8 +121,8 @@
 											<i class="fa fa-shopping-cart"></i>
 										</a>
 									</div>
-									<div class="beta-btn primary">
-										<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+									<div class="beta-btn primary" style="width: 158px;">
+										<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 									</div>
 									<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new->id])  ?></div>
 									<?php  if ($permission == 2 || $permission == 3){?>
@@ -174,8 +174,8 @@
 										<i class="fa fa-shopping-cart"></i>
 									</a>
 								</div>
-								<div class="beta-btn primary">
-									<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+								<div class="beta-btn primary" style="width: 156px;">
+									<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 								</div>
 								<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new->id])  ?></div>
 								<?php if ($permission == 2 || $permission == 3) {?>
@@ -226,8 +226,8 @@
 									<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 										<i class="fa fa-shopping-cart"></i></a>
 									</div>
-									<div class="beta-btn primary">
-										<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+									<div class="beta-btn primary" style="width: 156px;">
+										<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 									</div>
 									<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new->id])  ?></div>
 									<?php  if ($permission == 2 || $permission == 3) {?>
@@ -278,8 +278,8 @@
 										<a href="\cakecosy/getAddToCart/<?php echo $new->id ?>">
 											<i class="fa fa-shopping-cart"></i></a>
 										</div>
-										<div class="beta-btn primary">
-											<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+										<div class="beta-btn primary" style="width: 156px;">
+											<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 										</div>
 										<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new->id])  ?></div>
 										<?php  if ($permission == 2 || $permission == 3) {?>
@@ -330,8 +330,8 @@
 										<a href="\cakecosy/products/getAddToCart/<?php echo $new->id ?>">
 											<i class="fa fa-shopping-cart"></i></a>
 										</div>
-										<div class="beta-btn primary">
-											<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+										<div class="beta-btn primary" style="width: 156px;">
+											<i class="fa fa-phone" style="font-size: 16px;">: 0978172195</i>
 										</div>
 										<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new->id])  ?></div>
 										<?php  if ($permission == 2 || $permission == 3) {?>
