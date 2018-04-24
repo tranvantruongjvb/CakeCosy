@@ -82,12 +82,10 @@
                 </ul>
             </div>
         </div>
-        
-    
             <div class="category-item col-sm-4 " style="padding-top: 40px;" >
                     <div class="row clear-fix1 ">
                             <div class=" col-sm-6 col-xs-6" >
-                            <h3 >Tìm kiếp phổ biến</h3>
+                            <h3 >Danh mục sản phẩm</h3>
                             <ul style="color: #767676; list-style: none;" >
                               <?php foreach ($typeproducts as $type) { ?>
                             <li>
