@@ -65,10 +65,18 @@
 										<textarea name="content" placeholder="Nội dung của bài viết"></textarea>
 									</div>
 
-									<div>
-										<label>Chọn hình ảnh cho bài viết</label>
-										<input type="file" name="image" placeholder="Chọn ảnh cho bài viết">
-									</div>
+									<div class="form-group">
+						                <label>Chọn hình ảnh</label>
+						                <input type="file" class="form-control" accept="image/*" name="img_up[]" multiple="true" id="img_up" onchange="preUpImg();">
+						            </div>
+						            <div class="form-group box-pre-img hidden">
+						                <p><strong>Ảnh xem trước</strong></p>
+						            </div>
+						            <div class="form-group hidden box-progress-bar">
+						                <div class="progress">
+						                    <div class="progress-bar" role="progressbar"></div>
+						                </div>
+						            </div>
 								</div>
 								<div class="pull-right" style="padding-right: 15px;">
 									<button class="flash-sale" type="submit" style="background-color: white; border-color: #ff9900; border-radius: 10px; width: 100px; font-size: 18px;">Lưu bài <i class="fa fa-chevron-right"></i></button>
@@ -105,4 +113,26 @@
 	</div>
 </div>
 
- 
+<script type="text/javascript">
+	function preUpImg() {
+    img_up = $('#img_up').val();
+    count_img_up = $('#img_up').get(0).files.length;
+    $('.box-pre-img').html('<p><strong>Ảnh xem trước</strong></p>');
+    $('.box-pre-img').removeClass('hidden');
+
+    if (img_up != '')
+    {
+        $('.box-pre-img').html('<p><strong>Ảnh xem trước</strong></p>');
+        $('.box-pre-img').removeClass('hidden');
+        for (i = 0; i <= count_img_up - 1; i++)
+        {
+            $('.box-pre-img').append('<img src="' + URL.createObjectURL(event.target.files[i]) + '" style="border: 1px solid #ddd; width: 150px; height: 150px; margin-right: 5px; margin-bottom: 5px;"/>');
+        }
+    } 
+    else
+    {
+        $('.box-pre-img').html('');
+        $('.box-pre-img').addClass('hidden');
+    }
+}
+</script> 
