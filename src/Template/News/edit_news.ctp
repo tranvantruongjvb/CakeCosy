@@ -1,17 +1,7 @@
 
 <?php $readuser = $this->request->session()->read('Auth.User')?>
 <style type="text/css">
-	@media only screen and (max-width: 480px) and (min-width: 320px){
-  .abcde{
-      display: none;
-  }
-}
-  @media only screen and (max-width: 480px) and (min-width: 320px){
-  .abc{
-      display: inline;
-  }
-}
-
+	
 </style>
 <div class="container">
 	<div id="content" class="space-top-none">
@@ -65,22 +55,37 @@
 										<textarea name="content" ><?php echo $news->content ?></textarea>
 									</div>
 
+									<div class="form-group">
+						                <label>Thêm hình ảnh</label>
+						                <input type="file" class="form-control" accept="image/*" name="img_up[]" multiple="true" id="img_up" onchange="preUpImg();">
+						            </div>
+						            <div class="form-group box-pre-img hidden">
+						                <p><strong>Ảnh xem trước</strong></p>
+						            </div>
+						            <div class="form-group hidden box-progress-bar">
+						                <div class="progress">
+						                    <div class="progress-bar" role="progressbar"></div>
+						                </div>
+						            </div>
+									<label>Hình ảnh cho bài viết</label>
 									<div>
-										<label>Chọn hình ảnh cho bài viết</label>
-										<input type="file" name="image" placeholder="Chọn ảnh cho bài viết">
-									</div>
-										<div>
-											<label>Hình ảnh cho bài viết</label>
-										<ul>
+
 											<?php foreach ($image as $key) { ?>
-											<li>
-												<img style="width: 200px; height: 200px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> ">
-											</li>
-										
+											<div class="single-item col-sm-6" style="display: inline-block;">
+												<div class="single-item-header abc">
+													<?php if ($readuser['permission'] >=2) {?>
+														<div class="ribbon-wrapper-del del" style="width: 95%;" >
+														<div class="pull-right" style="float: right">
+															<a style=" width: 10px;" href="\cakecosy/news/deleteImage/<?php echo $key['c']['id'] ?>"><i class="fa fa-times"></i>
+															</a>
+														</div>
+													</div>
+													<?php } ?>
+													
+													<img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> " >
+												</div>
+											</div>
 										<?php } ?>
-										</ul>
-										
-										
 									</div>
 								</div>
 								<div class="pull-right" style="padding-right: 15px;">
@@ -117,5 +122,26 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function preUpImg() {
+    img_up = $('#img_up').val();
+    count_img_up = $('#img_up').get(0).files.length;
+    $('.box-pre-img').html('<p><strong>Ảnh xem trước</strong></p>');
+    $('.box-pre-img').removeClass('hidden');
 
- 
+    if (img_up != '')
+    {
+        $('.box-pre-img').html('<p><strong>Ảnh xem trước</strong></p>');
+        $('.box-pre-img').removeClass('hidden');
+        for (i = 0; i <= count_img_up - 1; i++)
+        {
+            $('.box-pre-img').append('<img src="' + URL.createObjectURL(event.target.files[i]) + '" style="border: 1px solid #ddd; width: 200px; height: 200px; margin-right: 20px; margin-bottom: 5px;"/>');
+        }
+    } 
+    else
+    {
+        $('.box-pre-img').html('');
+        $('.box-pre-img').addClass('hidden');
+    }
+}
+</script> 
