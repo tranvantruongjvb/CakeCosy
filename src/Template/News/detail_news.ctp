@@ -18,7 +18,7 @@
                             </li>
                             <?php } ?>
                         </ul>
-                        <div class="space60">&nbsp;</div>
+                        <div class="space50">&nbsp;</div>
                         <h4>Sản phẩm Theo giá</h4>
                         <ul class="aside-menu primary-nav">
                             <li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
