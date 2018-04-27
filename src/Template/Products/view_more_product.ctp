@@ -25,6 +25,14 @@ img{
 				</div><div class="clearfix"></div>
 				<div class="space10">&nbsp;</div>
 				<div class="col-sm-3" >
+					<h4>Danh Mục bánh</h4>
+						<ul class="aside-menu primary-nav">
+							<?php foreach ($typeproducts as $type) { ?>
+							<li>
+								<a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
+							</li>
+							<?php } ?>
+						</ul>
 						<div class="space60">&nbsp;</div>
 						<h4>Sản phẩm Theo giá</h4>
 						<ul class="aside-menu primary-nav">
