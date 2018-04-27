@@ -31,7 +31,7 @@
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><a href="\cakecosy/users/forgetpass"> Quên mật khẩu</a></td>
+                                            <td><a href="\cakecosy/forgetPass"> Quên mật khẩu</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
