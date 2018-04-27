@@ -1,41 +1,7 @@
 <?= $this->Html->css('slide')?>
 <style type="text/css">
-    <style type="text/css">
-    .category-item{
-
-}
-.category-item h3 {
-    color: #f90;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 450;
-    background-position: bottom 5px;
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-
-.category-item h3 a{
-    text-decoration: none;
-}
-.category-item li a {
-    color: #767676;
-    font-size: 14px;
-    text-decoration: none;
-}
- img{
+img{
     border-radius: 10px;
-    max-width: 95%;
-    max-height: 200px;
-}
-.category-item li a i{
- color: #f90;
-}
-   
-.category-item .article{
-    float: left;
-    width: 25%;
-    padding: 1px
-    border-radius:20px;
 }
 @media screen and (min-width: 1025px){
   .li{
@@ -43,10 +9,17 @@
     width: 170px;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px){
-  li{
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+  .li{
         max-width: 95%
-      height: 100px;
+      height: 200px;
+  }
+
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+  .li{
+        max-width: 95%
+      height: 236px;
   }
 
 }
