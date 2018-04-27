@@ -43,7 +43,7 @@ class ProductsController  extends AppController{
 		$slides= $sl->find('all');
 		$count = count($this->Products->find('all')->toArray());
 		$pr  = array();
-		for($i=1; $i <$count-3 ; $i++){ 
+		for($i=1; $i <$count-4 ; $i++){ 
 			array_push($pr,$i);
 		}
 		$random_keys=array_rand($pr,4);
