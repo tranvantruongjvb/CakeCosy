@@ -12,7 +12,7 @@ ul li{
 }
 </style>
 <div class="container">
-	<div id="primary" class="content-area col-md-9">
+	<div id="primary" class="content-area col-xs-12 col-md-9">
 			<article id="post-6" class="post-6 page type-page status-publish hentry">
 				<header class="entry-header">
 					<h1 class="entry-title">Giới thiệu</h1>
@@ -21,27 +21,27 @@ ul li{
 					<h3>
 						<span >
 							<strong>
-								<em>I. Đôi nét về banhgato.com.vn</em>
+								<em>I. Đôi nét về CakeFood.com.vn</em>
 							</strong>
 						</span>
 					</h3>
 					<p style="text-align: justify;">
 						<span >
 							<strong>
-								<em>banhgato.com.vn</em>
+								<em>CakeFood.com.vn</em>
 							</strong> chính thức hoạt động từ ngày 18/07/2016. Chúng tôi chuyên cung cấp các loại bánh sinh nhật, bánh kỷ niệm, bánh cưới, bánh sự kiện công ty.
 						</span>
 					</p>
 					<p style="text-align: justify;">
 						<span>Thương hiệu 
 							<strong>
-								<em>banhgato.com.</em>
+								<em>CakeFood.com.</em>
 							</strong>
 							<strong>
 								<em>.vn</em>
 							</strong> được chúng tôi đăng kí và sử dụng từ ngày 18/07/2016. Quý khách hàng lưu ý rằng 
 							<strong>
-								<em>banhgato.com.</em>
+								<em>CakeFood.com.</em>
 							</strong>
 							<strong>
 								<em>vn</em>
@@ -99,7 +99,7 @@ ul li{
 				<p style="text-align: justify;">
 					<span >Sau đây là những cam kết mà
 						<strong>
-							<em>banhgato.com.</em>
+							<em>CakeFood.com.</em>
 						</strong>
 						<strong>
 							<em>vn</em>
@@ -132,24 +132,24 @@ ul li{
 			</div><!-- .entry-content -->
 		</article><!-- #post-## -->
 	</div>
-	<div class="col-sm-3" style="float: right">
-						<div class="space20">&nbsp;</div>
-						<h4>Danh Mục bánh</h4>
-						<ul class="aside-menu primary-nav">
-							<?php foreach ($typeproducts as $type) { ?>
-							<li>
-								<a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
-							</li>
-							<?php } ?>
-						</ul>
-						<div class="space60">&nbsp;</div>
-						<h4>Sản phẩm Theo giá</h4>
-						<ul class="aside-menu primary-nav">
-							<li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
-						</ul>
-					</div>
+	<div class=" col-xs-12 col-sm-3" style="float: right">
+		<div class="space20">&nbsp;</div>
+		<h4>Danh Mục bánh</h4>
+		<ul class="aside-menu primary-nav">
+			<?php foreach ($typeproducts as $type) { ?>
+			<li>
+				<a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
+			</li>
+			<?php } ?>
+		</ul>
+		<div class="space60">&nbsp;</div>
+		<h4>Sản phẩm Theo giá</h4>
+		<ul class="aside-menu primary-nav">
+			<li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
+			<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
+			<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
+			<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
+			<li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
+		</ul>
+	</div>
 </div>
