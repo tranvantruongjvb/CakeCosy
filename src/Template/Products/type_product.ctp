@@ -31,6 +31,23 @@ img{
 					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 						<div class="beta-products-list">
 							<div class="row"></div>
+							<div style="padding-right: 35px;">
+								<form  action="\cakecosy/typeProduct/<?php echo $typeproducts['0']['id'] ?>" method="post">
+										<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>Xem Thêm Sản Phẩm
+											<span class="pull-right" style="font-size: 15px; text-align: center;">
+												<button type="submit"  style="background: #ffffff; border: 1px solid #ff8d00;    border-radius: 5px; height: 20px;">Lọc theo</button>
+											</span>
+											<span class="pull-right" style="font-size: 15px; color: black;border: 1px solid #ff8d00; border-radius: 5px;">
+												<select name="sort">
+													<option value="thap" class="select"> Giá thấp đến cao</option>
+													<option value="cao" class="select"> Giá cao xuống thấp</option>
+												</select>
+											</span>
+										</h4>
+									</form>
+								</div><div class="clearfix"></div>
+							<div class="space10">&nbsp;</div>
+
 							<?php foreach($getproduct as $new): 
 							?>
 							<div class="col-xs-10 col-sm-6 col-md-4 col-lg-4">
