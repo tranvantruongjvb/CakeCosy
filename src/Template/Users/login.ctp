@@ -26,12 +26,12 @@
                                             <td><input type="text" name="email" placeholder="Nhập địa chỉ email"> </td>
                                         </tr>
                                         <tr>
-                                            <td>PassWord: </td>
+                                            <td>Mật khẩu: </td>
                                             <td><input type="password" name="password" placeholder="Nhập mật khẩu"></td>
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><a href="\cakecosy/users/forgetpass"> Forget password</a></td>
+                                            <td><a href="\cakecosy/users/forgetpass"> Quên mật khẩu</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
