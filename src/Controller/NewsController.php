@@ -50,7 +50,9 @@ class NewsController extends AppController{
 		}
 		$this->readTypeproduct();
 		
-		$news = $this->News->find('all')-> toArray();
+		$news = $this->News->find('all')
+		->order(['news.id' => 'desc'])
+		->toArray();
 		$this->set(compact('news','product_sale')); 
 	}
 	public function comment()
