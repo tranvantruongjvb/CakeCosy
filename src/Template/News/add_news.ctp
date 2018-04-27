@@ -11,9 +11,11 @@
       display: inline;
   }
 }
-
+.error{
+	color: red;
+}
 </style>
-<div class="container">
+<div class="container"> 
 	<div id="content" class="space-top-none">
 		<div class="main-content">
 			<div class="space60"></div>
@@ -40,7 +42,7 @@
 						</ul>
 					</div>
 					<div class="beta-products-list col-sm-6 ">
-						<form action="\cakecosy/news/addNews" method="post">
+						<form action="\cakecosy/news/addNews" method="post" id="myForm">
 							<div class="clearfix"></div>
 							<div class="space50">&nbsp;</div>
 							<div class="beta-products-details">
@@ -67,7 +69,7 @@
 
 									<div class="form-group">
 						                <label>Chọn hình ảnh</label>
-						                <input type="file" class="form-control" accept="image/*" name="img_up[]" multiple="true" id="img_up" onchange="preUpImg();">
+						                <input type="file" class="form-control" accept="image/*" name="img_up" multiple="true" id="img_up" onchange="preUpImg();">
 						            </div>
 						            <div class="form-group box-pre-img hidden">
 						                <p><strong>Ảnh xem trước</strong></p>
@@ -112,7 +114,7 @@
 		</div>
 	</div>
 </div>
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script type="text/javascript">
 	function preUpImg() {
     img_up = $('#img_up').val();
@@ -135,4 +137,22 @@
         $('.box-pre-img').addClass('hidden');
     }
 }
+
+$(document).ready(function() {
+		$("#myForm").validate(
+		{
+			rules: {
+				title: "required",
+				description: "required",
+				content: "required",
+				img_up: "required",
+			},
+			messages: {
+				title: "Nhập tiêu đề của bài viết",
+				description :"Miêu tả ngắn về bài viết ",
+				content: "Nhập nội dung của bài viết vủa bạn",
+				img_up: "Chọn ảnh cho bài viết",
+			}
+		}); 
+	});   
 </script> 
