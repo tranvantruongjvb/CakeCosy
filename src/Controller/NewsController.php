@@ -53,8 +53,52 @@ class NewsController extends AppController{
 		$news = $this->News->find('all')-> toArray();
 		$this->set(compact('news','product_sale')); 
 	}
+	public function comment()
+	{
+		$c = TableRegistry::get('comments');
+		$query = $c->find('all')
+		->where(['comments.id_news !=' =>0])
+		->order(['comments.id' => 'desc'])
+		-> toArray();
+
+		$this->set('comments',$query);
+	}
+
+	public function addComment($id)
+	{
+		$c = TableRegistry::get('comments');
+		$read_user = $this->request->session()->read('Auth.User');
+		$email =  $read_user['email'];
+		$data = $this->request->data();
+		$comment = $c->newEntity();
+		$comment['id_news'] = $id;
+		$comment['comment'] = $data['comment'];
+		$comment['email'] = $email;
+		$c->save($comment);
+		$this->redirect($this->referer());
+	}
+
+	public function deleteComment($id)
+	{	
+		$readuser = $this->request->session()->read('Auth.User');
+		$c = TableRegistry::get('comments');
+
+		$comment = $c->get($id);
+		if($readuser['id']== $comment['id_author']){
+			if ($c->delete($comment)) {
+			$this->Flash->success(__('Bình luận id: {0} đã được xóa.', h($id)));
+			return $this->redirect($this->referer());
+			} 
+		}else {
+			$this->Flash->error(__('Bạn không có quyền xóa bình luận này. Bạn chỉ có thể xóa bình luận của mình'));
+			return $this->redirect($this->referer());
+		}
+		
+	}
 	public function detailNews($id)
 	{
+
+		$this->comment();
 		$this->readTypeproduct();
 		$this->news();
 		$img = TableRegistry::get('images');
@@ -66,6 +110,8 @@ class NewsController extends AppController{
 	}
 	public function listNews()
 	{
+		$readuser = $this->request->session()->read('Auth.User');
+
 		$this->readTypeproduct();
 		$this->paginate= array(
 			'limit' => LIMIT_LISR_USER,
@@ -73,9 +119,18 @@ class NewsController extends AppController{
 				'news.id' => 'DESC'
 			],
 		);
-		$news = $this->paginate('News');
+		if($readuser['permission'] == 2){
+			$getnews = $this->News->find('all')
+			->where(['news.id_author =' => $readuser['id']] );
+			$news = $this->paginate($getnews);
+		}
+		else if($readuser['permission']==3){
+			$news = $this->paginate('News');
+		}
 		$this->set(compact('news','typeproducts'));		
 	}
+	
+ 
 	public function saveImage()
 	{
 		$img = TableRegistry::get('images');
@@ -113,6 +168,7 @@ class NewsController extends AppController{
 			
 	public function editNews($id)
 	{	
+		$readuser = $this->request->session()->read('Auth.User');
 		$this->readTypeproduct();
 		$this->news();
 		$news = $this->News->get($id);
@@ -130,14 +186,20 @@ class NewsController extends AppController{
 		])
 		->where(['news.id =' => $id ])
 		->toArray();
-		if ($this->request->is(['post'])) {
-			$this->News->patchEntity($news, $this->request->data);
-			if ($this->News->save($news)) {
-				$this->saveImage();
-				$this->Flash->success(__('Bài viết của bạn được cập nhật.'));
-				return $this->redirect($this->referer());
-			}$this->Flash->error(__('không thể cập nhật bài viết.'));
+		if ($readuser['id'] == $news->id_author) {
+			if ($this->request->is(['post'])) {
+				$this->News->patchEntity($news, $this->request->data);
+				if ($this->News->save($news)) {
+					$this->saveImage();
+					$this->Flash->success(__('Bài viết của bạn được cập nhật.'));
+					return $this->redirect($this->referer());
+				}$this->Flash->error(__('không thể cập nhật bài viết.'));
+			}
+		}else {
+			$this->Flash->error(__('Bạn không có quyền chỉnh sửa bài viết này.'));
+			return $this->redirect($this->referer());
 		}
+		
 
 		$this->set(compact('news', 'image'));
 	}

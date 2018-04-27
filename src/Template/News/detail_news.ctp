@@ -1,6 +1,6 @@
 <?php $readuser = $this->request->session()->read('Auth.User')?>
 <style type="text/css">
-    
+  
 </style>
 <div class="container">
     <div id="content" class="space-top-none">
@@ -30,35 +30,78 @@
                     </div>
                     <div class="beta-products-list col-sm-6 ">
                         <div class="space60">&nbsp;</div>
-                        <div >     
-                                <div style="float:left;">
+                        <div> 
+                                <div >
                                     <div >
-                                        <a  href=""><?php echo $getnews['author'] ?></a>
+                                        <b style="color: #337ab7"><?php echo $getnews['author'] ?></b>
                                     </div>
                                     <div >          
                                             <i class="fa fa-mobile"></i>
                                         <span > <?php echo date_format($getnews['created_at'],'d/m/Y H:i:s') ?></span>
+                                        <br>
+                                        <?php if($readuser['permission'] >=2) {?>
+                                        <a href="\cakecosy/editNews/<?php echo $getnews['id'] ?>">Chỉnh sửa bài viết</a>
+                                        <?php } ?>
                                     </div>
                                 </div>
-                           <div class="clearfix"></div>
-                           <div class="space10">&nbsp;</div>
-                            <div >
-                                <a href="" ><?php echo $getnews['title'] ?></a>
-                                <div class="space10">&nbsp;</div>
-                                <div>
-                                    <span><?php echo $getnews['content'] ?></span><a href="">Xem thêm</a>
+                               <div class="clearfix"></div>
+                               <div class="space10">&nbsp;</div>
+                                <div >
+                                    <h3 style="color: #337ab7"><?php echo $getnews['title'] ?></h3>
+                                    <div class="space10">&nbsp;</div>
+                                    <div>
+                                        <span><?php echo $getnews['content'] ?></span>
+                                    </div>
                                 </div>
-                            </div>
                              <div class="space10">&nbsp;</div>
-                            <div>
-                                <?php foreach ($image as $key) { ?>
-                                    <div class="single-item col-sm-6" style="display: inline-block;">
-                                        <div class="single-item-header abc">
-                                            <img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key->image ?> " >
+                                <div>
+                                    <?php foreach ($image as $key) { ?>
+                                        <div class="single-item col-sm-6" style="display: inline-block;">
+                                            <div class="single-item-header abc">
+                                                <img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key->image ?> " >
+                                            </div>
                                         </div>
-                                    </div>
-                                <?php } ?>
+                                    <?php } ?>
+                                </div>
                             </div>
+                          <div class="clearfix"></div>
+                               <div class="space10">&nbsp;</div>
+                        <div class="woocommerce-tabs">
+                            <ul class="tabs">
+                                <li><a href="#tab-description">Bình luận</a></li>
+                            </ul>
+                            <div class="panel" id="tab-description">
+                                <form method="post" action="\cakecosy/news/addComment/<?php echo $getnews['id'] ?>">
+                                    <?php if (count($comments)==0) { ?>
+                                        <p>Chưa có bình luận nào. Hãy đăng nhập để bình luận</p>
+                                    <?php } ?>
+                                    <?php foreach ($comments as $key) {?>
+                                        <div style="border-radius: 5px;border: 1px solid #FFCC33;">
+                                            <p style="color: #f90; font-size: 15px;">&nbsp;&nbsp;<?php echo $key['email'] ?></p>
+                                            <?php if($readuser['permission'] >=2) {?>
+                                            <a class="pull-right" style=" width: 5px; padding-right: 20px;" href="\cakecosy/news/deleteComment/<?php echo $key['id'] ?>"><i class="fa fa-times"></i></a>
+                                            <?php } ?>
+                                            <p>&nbsp;&nbsp;<?php echo $key['comment']?> </p>
+                                            <p style="font-size: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date_format($key['created_at'],'d/m/Y H:i:s')?></p>
+                                        </div>
+                                        <div class="space5">&nbsp;&nbsp;</div>
+                                    <?php } ?>
+                                    
+                                    <div class="panel" id="tab-description">
+                                        <?php if(!$readuser) {?>
+                                                <span>
+                                                    <a class="beta-btn primary" href="\cakecosy/login">Đăng nhập để bình luận</a>
+                                                </span>
+                                        <?php }else {?>
+                                                <span>
+                                                    <input type="text" name="comment" placeholder="Bình để bình luận">
+                                                    <button type="submit" class=" beta-btn primary"> Bình luận</button>
+                                                </span>
+                                        <?php } ?>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
                     </div>  
                     <div class="col-xs-3 col-sm-3 aside  abcde" style="float: right;padding-top: 50px;">

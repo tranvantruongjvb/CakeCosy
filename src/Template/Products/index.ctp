@@ -2,13 +2,6 @@
 	.ribbon-wrapper {
 		float: right;
 	}
-/*@media only screen and (max-width: 480px) and (min-width: 320px){
-  img{
-  		max-width: 95%
-      height: 100px;
-  }
-
-}*/
 </style>
 
 <?php $permission = $this->request->session()->read('Auth.User')['permission'] ?>
@@ -18,8 +11,6 @@
         echo $this->element("slide");
    		 ?>
 	</div>
-	
-   
 	<div id="content" class="space-top-none">
 		<div class="main-content">
 			<div class="space40"></div>

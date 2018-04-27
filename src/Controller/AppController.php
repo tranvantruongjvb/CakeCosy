@@ -80,7 +80,7 @@ class AppController extends Controller
 	public function beforeFilter(Event $event)
 	{
 		
-		$this->Auth->allow(['index','contact','typeProduct','detailProduct','getSearch','getAddToCart','destroy','order','deleteItem','updateQuantity','addUser','postCheckout','getNew','forgetPass', 'viewMoreProduct', 'news', 'introducttion','detailNews']);
+		$this->Auth->allow(['index','contact','typeProduct','detailProduct','getSearch','getAddToCart','destroy','order','deleteItem','deleteComment','updateQuantity','addUser','postCheckout','getNew','forgetPass', 'viewMoreProduct', 'news', 'introducttion','detailNews']);
 	}
     /**
      * Before render callback.

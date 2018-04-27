@@ -506,9 +506,8 @@ class ProductsController  extends AppController{
 	public function deleteComment($id)
 	{	
 		$c = TableRegistry::get('comments');
-		$this->request->allowMethod(['post', 'delete']);
 		$comment = $c->get($id);
-		if ($this->Products->delete($comment)) {
+		if ($c->delete($comment)) {
 			$this->Flash->success(__('Bình luận id: {0} đã được xóa.', h($id)));
 			return $this->redirect($this->referer());
 		} 
@@ -580,7 +579,7 @@ class ProductsController  extends AppController{
 		$this->request->allowMethod(['post', 'delete']);
 		$product = $this->Products->get($id);
 		if ($this->Products->delete($product)) {
-			$this->Flash->success(__('Sản phẩm có id: {0} đã được xóa.', h($name)));
+			$this->Flash->success(__('Sản phẩm có id: {0} đã được xóa.', h($id)));
 			return $this->redirect(URL_INDEX);
 		}       
 	}

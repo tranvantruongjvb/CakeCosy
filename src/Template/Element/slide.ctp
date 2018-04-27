@@ -43,7 +43,13 @@
     width: 170px;
   }
 }
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+  li{
+        max-width: 95%
+      height: 100px;
+  }
 
+}
 
 </style>
 <div class="container">

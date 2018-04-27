@@ -36,6 +36,8 @@
 										<li><a href="\cakecosy/listCustomer" class="dropdown-item">Danh sách đơn hàng</a></li>
 										<?php if($readuser['permission'] == 3){ ?>
 										<li><a href="\cakecosy/listUser" class="dropdown-item">Danh sách người dùng </a></li>
+										<?php } ?>
+										<?php if($readuser['permission'] == 2){ ?>
 										<li><a href="\cakecosy/news/listNews" class="dropdown-item">Danh sách tin tức </a></li>
 										<?php } ?>
 										<li><a href="\cakecosy/detailUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Thông tin tài khoản </a></li>
