@@ -8,6 +8,22 @@ img{
 		<div class="main-content">
 			<div class="space60">&nbsp;</div>
 			<div class="row">
+				<div style="padding-right: 35px;">
+					<form  action="\cakecosy/viewMoreProduct/<?php echo $viewmoreproducts['0']['unit_price'] ?>" method="post">
+							<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>Xem Thêm Sản Phẩm
+								<span class="pull-right" style="font-size: 15px; text-align: center;">
+									<button type="submit"  style="background: #ffffff; border: 1px solid #ff8d00;    border-radius: 5px; height: 20px;">Lọc theo</button>
+								</span>
+								<span class="pull-right" style="font-size: 15px; color: black;border: 1px solid #ff8d00; border-radius: 5px;">
+									<select name="sort">
+										<option value="thap" class="select"> Giá thấp đến cao</option>
+										<option value="cao" class="select"> Giá cao xuống thấp</option>
+									</select>
+								</span>
+							</h4>
+						</form>
+				</div><div class="clearfix"></div>
+				<div class="space10">&nbsp;</div>
 				<div class="col-sm-3" >
 						<div class="space60">&nbsp;</div>
 						<h4>Sản phẩm Theo giá</h4>
