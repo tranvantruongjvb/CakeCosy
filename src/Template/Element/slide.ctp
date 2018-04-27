@@ -2,6 +2,12 @@
 <style type="text/css">
 img{
     border-radius: 10px;
+
+
+}
+.li{
+    height: 196px;
+
 }
 @media screen and (min-width: 1025px){
   .li{
@@ -9,20 +15,7 @@ img{
     width: 170px;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 769px){
-  .li{
-        max-width: 95%
-      height: 200px;
-  }
 
-}
-@media only screen and (max-width: 768px) and (min-width: 480px){
-  .li{
-        max-width: 95%
-      height: 236px;
-  }
-
-}
 
 </style>
 <div class="container">
