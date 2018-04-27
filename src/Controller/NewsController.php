@@ -142,9 +142,9 @@ class NewsController extends AppController{
 		->where(['id !=' => 1])
 		->last();
 		$data = $this->request->data();
-		$image=$data['img_up']['0'];
+		$image=$data['img_up'];
 		$dir = WWW_ROOT .'img\uploads\ '. $image;
-		$a = move_uploaded_file($data['img_up']['0'], $dir);
+		$a = move_uploaded_file($data['img_up'], $dir);
 		$saveimg = $img->newEntity();
 		$saveimg['image'] = '/img/uploads/'.$image;
 		$saveimg['id_news']	= $id['id'];
@@ -189,8 +189,10 @@ class NewsController extends AppController{
 		])
 		->where(['news.id =' => $id ])
 		->toArray();
+
 		if ($readuser['id'] == $news->id_author) {
 			if ($this->request->is(['post'])) {
+				
 				$this->News->patchEntity($news, $this->request->data);
 				if ($this->News->save($news)) {
 					$this->saveImage();
