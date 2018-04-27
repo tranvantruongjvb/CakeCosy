@@ -57,7 +57,7 @@
 
 									<div class="form-group">
 						                <label>Thêm hình ảnh</label>
-						                <input type="file" class="form-control" accept="image/*" name="img_up[]" multiple="true" id="img_up" onchange="preUpImg();">
+						                <input type="file" class="form-control" accept="image/*" name="img_up" multiple="true" id="img_up" onchange="preUpImg();">
 						            </div>
 						            <div class="form-group box-pre-img hidden">
 						                <p><strong>Ảnh xem trước</strong></p>
@@ -69,23 +69,21 @@
 						            </div>
 									<label>Hình ảnh cho bài viết</label>
 									<div>
-
-											<?php foreach ($image as $key) { ?>
-											<div class="single-item col-sm-6" style="display: inline-block;">
-												<div class="single-item-header abc">
-													<?php if ($readuser['permission'] >=2) {?>
-														<div class="ribbon-wrapper-del del" style="width: 95%;" >
-														<div class="pull-right" style="float: right">
-															<a style=" width: 10px;" href="\cakecosy/news/deleteImage/<?php echo $key['c']['id'] ?>"><i class="fa fa-times"></i>
-															</a>
-														</div>
+										<?php foreach ($image as $key) { ?>
+										<div class="single-item col-sm-6" style="display: inline-block;">
+											<div class="single-item-header abc">
+												<?php if ($readuser['permission'] >=2) {?>
+													<div class="ribbon-wrapper-del del" style="width: 95%;" >
+													<div class="pull-right" style="float: right">
+														<a style=" width: 10px;" href="\cakecosy/news/deleteImage/<?php echo $key['c']['id'] ?>"><i class="fa fa-times"></i>
+														</a>
 													</div>
-													<?php } ?>
-													
-													<img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> " >
 												</div>
+												<?php } ?>
+												<img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> " >
 											</div>
-										<?php } ?>
+										</div>
+									<?php } ?>
 									</div>
 								</div>
 								<div class="pull-right" style="padding-right: 15px;">
@@ -144,4 +142,21 @@
         $('.box-pre-img').addClass('hidden');
     }
 }
+$(document).ready(function() {
+		$("#myForm").validate(
+		{
+			rules: {
+				title: "required",
+				description: "required",
+				content: "required",
+				
+			},
+			messages: {
+				title: "Nhập tiêu đề của bài viết",
+				description :"Miêu tả ngắn về bài viết ",
+				content: "Nhập nội dung của bài viết vủa bạn",
+				
+			}
+		}); 
+	});   
 </script> 
