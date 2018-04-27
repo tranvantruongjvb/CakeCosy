@@ -2,21 +2,10 @@
 <style type="text/css">
 img{
     border-radius: 10px;
-
-
 }
 .li{
     height: 196px;
-
 }
-@media screen and (min-width: 1025px){
-  .li{
-    height: 165px;
-    width: 170px;
-  }
-}
-
-
 </style>
 <div class="container">
     <div class="col-sm-12 ">
@@ -44,7 +33,7 @@ img{
                 <p style="color: #fb6108;font-size: 18px;"><span>Sản phẩm nhiều khách hàng chọn</span></p>
                 <ul class="col-sm-12">
                     <?php foreach ($product_sale as $key) { ?>
-                    <li class="single-item1 col-sm-5 li" >
+                    <li class="single-item1 col-sm-6 li" >
                         <span>
                              <a href="\cakecosy/detailProduct/<?php echo $key['id'] ?>">
                                  <img style=" width: 100px; height: 100px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
