@@ -71,6 +71,7 @@ class NewsController extends AppController{
 		$email =  $read_user['email'];
 		$data = $this->request->data();
 		$comment = $c->newEntity();
+		$comment['id_user'] = $read_user['id'];
 		$comment['id_news'] = $id;
 		$comment['comment'] = $data['comment'];
 		$comment['email'] = $email;
@@ -82,9 +83,9 @@ class NewsController extends AppController{
 	{	
 		$readuser = $this->request->session()->read('Auth.User');
 		$c = TableRegistry::get('comments');
-
 		$comment = $c->get($id);
-		if($readuser['id']== $comment['id_author']){
+
+		if($readuser['id']== $comment['id_user']){
 			if ($c->delete($comment)) {
 			$this->Flash->success(__('Bình luận id: {0} đã được xóa.', h($id)));
 			return $this->redirect($this->referer());
