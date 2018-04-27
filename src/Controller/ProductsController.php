@@ -441,6 +441,15 @@ class ProductsController  extends AppController{
 		$this->paginate= array(
 			'limit' => LIMIT_DETAIL_PRODUCT,
 		);
+
+		if($this->request->is('post')){
+			$s = $this->request->data();
+			$sort = $s['sort'];
+			$getpro->order(['products.unit_price' => 'desc']);
+		}else{
+			$sort ='thấp';
+			$getpro->order(['products.unit_price' => 'asc']);
+		}
 		$getproduct = $this->paginate($getpro);
 		$this->set(compact("typeproducts", "getproduct"));
 	}
