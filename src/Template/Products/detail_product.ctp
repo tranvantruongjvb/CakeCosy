@@ -65,7 +65,7 @@ img {
 						<li><a href="#tab-description">Bình luận</a></li>
 					</ul>
 					<div class="panel" id="tab-description">
-						<form method="post" action="\cakecosy/products/addComment/<?php echo $products->id ?>">
+						<form id="myForm" method="post" action="\cakecosy/products/addComment/<?php echo $products->id ?>">
 							<?php if (count($comments)==0) { ?>
 								<p>Chưa có bình luận nào. Hãy đăng nhập để bình luận</p>
 							<?php } ?>
@@ -173,9 +173,21 @@ img {
 								<?php endforeach; ?>
 							</div>
 						</div>
-					</div> <!-- best sellers widget -->
-					<!-- best sellers widget -->
+					</div>
 				</div>
 			</div>
-		</div> <!-- #content -->
-</div> <!-- .container -->
+		</div> 
+</div> 
+<script type="text/javascript">
+   $(document).ready(function() {
+        $("#myForm").validate(
+        {
+            rules: {
+                comment: "required",
+            },
+            messages: {
+                comment: "Bạn chưa bình luận gì cho sản phẩm",
+            }
+        }); 
+    });   
+</script>
