@@ -1,3 +1,16 @@
+<style type="text/css">
+	@media (max-width: 320px){
+	input {
+		width: 160px;
+	}
+}
+@media (max-width: 375px) and (min-width: 321px){
+	input {
+		width: 200px;
+	}
+}
+</style>
+
 <div class="message error " style="text-align: center;color: red;" onclick="this.classList.add('hidden');"></div>
 <div class="container">
 	<div class="row">
