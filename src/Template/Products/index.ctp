@@ -1,9 +1,3 @@
-<style type="text/css">
-	.ribbon-wrapper {
-		float: right;
-	}
-</style>
-
 <?php $permission = $this->request->session()->read('Auth.User')['permission'] ?>
 <div class="container">
 	<div class="Collapse">
@@ -13,14 +7,13 @@
 	</div>
 	<div id="content" class="space-top-none">
 		<div class="main-content">
-			<div class="space40"></div>
 			<div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 					<div class="beta-products-list">
 						<div class="clearfix"></div>
-						<div class="space50">&nbsp;</div>
+						<div class="space20">&nbsp;</div>
 						<div class="beta-products-details">
-							<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i></i>  Sản Phẩm Mới</h4>
+							<h4 style="color: #f90; font-size: 22px"><i class="fa fa-hand-o-right"></i></i>  Sản Phẩm Mới</h4>
 							<div class="clearfix"></div>
 						</div> 
 						<div>
@@ -81,7 +74,7 @@
 				<div class="space50">&nbsp;</div>
 				<div class="beta-products-list">
 					<h4 style="color: #f90; font-size: 22px">
-						<i class="fa fa-mail-forward"></i>  Sản Phẩm Khuyến Mãi<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/11" >Xem thêm...</a>
+						<i class="fa fa-hand-o-right"></i>  Sản Phẩm Khuyến Mãi<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/11" >Xem thêm...</a>
 					</h4>
 					<div class="space30">&nbsp;</div>
 					<?php foreach($promotion_price as $new):?>
@@ -134,7 +127,7 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="beta-products-list">
-					<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>  Sản Phẩm Dưới 100,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/80000">Xem thêm...</a></h4>
+					<h4 style="color: #f90; font-size: 22px"><i class="fa fa-hand-o-right"></i>  Sản Phẩm Dưới 100,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/80000">Xem thêm...</a></h4>
 					<div class="space30">&nbsp;</div>				
 					<?php foreach($price100 as $new): 
 					?>
@@ -187,7 +180,7 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="beta-products-list">
-					<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>  Sản Phẩm  100,000đ đến 200,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/120000" >Xem thêm...</a></h4>
+					<h4 style="color: #f90; font-size: 22px"><i class="fa fa-hand-o-right"></i>  Sản Phẩm  100,000đ đến 200,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/120000" >Xem thêm...</a></h4>
 					<div class="space30">&nbsp;</div>						
 					<?php foreach($price200 as $new): 
 					?>
@@ -239,7 +232,7 @@
 					</div>
 					<div class="clearfix"></div>
 					<div class="beta-products-list">
-						<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>  Sản Phẩm Giá Từ 200,000đ - 300,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/220000" >Xem thêm...</a></h4>	
+						<h4 style="color: #f90; font-size: 22px"><i class="fa fa-hand-o-right"></i>  Sản Phẩm Giá Từ 200,000đ - 300,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/220000" >Xem thêm...</a></h4>	
 						<div class="space30">&nbsp;</div>						
 						<?php foreach($price300 as $new): 
 						?>
@@ -291,7 +284,7 @@
 					</div>
 					<div class="clearfix"></div>
 					<div class="beta-products-list">	
-						<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>  Sản Phẩm Giá Trên 300,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/300000" >Xem thêm...</a></h4>	
+						<h4 style="color: #f90; font-size: 22px"><i class="fa fa-hand-o-right"></i>  Sản Phẩm Giá Trên 300,000đ<a style="font-size: 15px" class="pull-right" href="\cakecosy/viewMoreProduct/300000" >Xem thêm...</a></h4>	
 						<div class="space30">&nbsp;</div>
 						<?php foreach($price400 as $new): 
 						?>
