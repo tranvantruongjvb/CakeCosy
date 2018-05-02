@@ -144,7 +144,7 @@ class NewsController extends AppController{
 		$data = $this->request->data();
 		$image=$data['img_up'];
 		$dir = WWW_ROOT .'img\uploads\ '. $image;
-		$a = move_uploaded_file($data['img_up'], $dir);
+		$a = move_uploaded_file($image, $dir);
 		$saveimg = $img->newEntity();
 		$saveimg['image'] = '/img/uploads/'.$image;
 		$saveimg['id_news']	= $id['id'];
@@ -189,23 +189,31 @@ class NewsController extends AppController{
 		])
 		->where(['news.id =' => $id ])
 		->toArray();
-
 		if ($readuser['id'] == $news->id_author) {
 			if ($this->request->is(['post'])) {
-				
-				$this->News->patchEntity($news, $this->request->data);
-				if ($this->News->save($news)) {
-					$this->saveImage();
-					$this->Flash->success(__('Bài viết của bạn được cập nhật.'));
+				if($this->request->data(['img_up']) == ""){
+					$this->Flash->error(__('Bạn chưa chọn hình ảnh cho bài viết.'));
 					return $this->redirect($this->referer());
-				}$this->Flash->error(__('không thể cập nhật bài viết.'));
+				}else {
+					$this->News->patchEntity($news, $this->request->data);
+					if($this->News->save($news)){
+						$data = $this->request->data();
+						$image=$data['img_up'];
+						$dir = WWW_ROOT .'img\uploads\ '. $image;
+						$a = move_uploaded_file($image, $dir);
+						$saveimg = $img->newEntity();
+						$saveimg['image'] = '/img/uploads/'.$image;
+						$saveimg['id_news']	= $news->id;
+						$img->save($saveimg);
+						$this->Flash->success(__('Bài viết của bạn được cập nhật.'));
+						return $this->redirect($this->referer());
+						}$this->Flash->error(__('không thể cập nhật bài viết.'));
+				}
 			}
 		}else {
 			$this->Flash->error(__('Bạn không có quyền chỉnh sửa bài viết này.'));
 			return $this->redirect($this->referer());
 		}
-		
-
 		$this->set(compact('news', 'image'));
 	}
 	public function deleteImage($id)
