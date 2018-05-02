@@ -166,6 +166,10 @@
 										<li><a href="\cakecosy/listCustomer" class="dropdown-item">Danh sách đơn hàng</a></li>
 										<?php if($readuser['permission'] == 3){ ?>
 										<li><a href="\cakecosy/listUser" class="dropdown-item">Danh sách người dùng </a></li>
+										<li><a href="\cakecosy/news/listNews" class="dropdown-item">Danh sách tin tức </a></li>
+										<?php } ?>
+										<?php if($readuser['permission'] == 2){ ?>
+										<li><a href="\cakecosy/news/listNews" class="dropdown-item">Danh sách tin tức </a></li>
 										<?php } ?>
 										<li><a href="\cakecosy/detailUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Thông tin tài khoản </a></li>
 										<li><a href="\cakecosy/editUser/<?php echo $readuser['id'] ?>" class="dropdown-item">Cập nhật thông tin </a></li>
@@ -197,26 +201,19 @@
 					<?php } ?>
 					</div>
 				</nav>
-
 					</div>
-
-
 					<div style="width: 100%">
 						<ul class="nav navbar-nav navbar-right ml-auto pull-left" style="width: 40%">
 				      	<li class="nav-item dropdown">
 							<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-bars"></i>Menu </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="\cakecosy/index" ><i class="fa fa-home"></i>Trang Chủ</a>
+									<a href="\cakecosy/index" ><i class="fa fa-home" style="color: white"></i>Trang Chủ</a>
 								</li>
-								<li><a href="\cakecosy/typeProduct/1" > <i class="fa fa-retweet"></i>Danh Mục Sản Phẩm</a>
-									<ul class="sub-menu">
-										<?php foreach ($typeproducts as $type ) { ?>
-										<li><?= $this->Html->link($type->name, ['controller'=>'products','action' => 'typeProduct', $type->id]) ?></li>
-										<?php } ?>
-									</ul>
-								</li>
-								<li><a href="\cakecosy/contact"><i class="	fa fa-volume-control-phone"></i>Liên Hệ</a></li>
+								<li><a href="\cakecosy/typeProduct/1" > <i class="fa fa-th-list"  style="color: white"></i>Danh Mục Sản Phẩm</a></li>
+								<li><a href="\cakecosy/news"><i class="fa fa-id-card-o" style="color: white"></i>Tin tức</a></li>
+								<li><a href="\cakecosy/introducttion"><i class="fa fa-ravelry" style="color: white"></i>Giới thiệu</a></li>
+								<li><a href="\cakecosy/contact"><i class="fa fa-volume-control-phone" style="color: white"></i>Liên Hệ</a></li>
 							</ul>
 				      	</li>
 				    </ul>
@@ -276,25 +273,23 @@
 						<li >
 							<a href="\cakecosy/index" ><i class="fa fa-home" style="color: white"></i>Trang Chủ</a>
 						</li>
-						<li><a href="\cakecosy/typeProduct/1" ><i class="fa fa-retweet" style="color: white"></i>Danh Mục Sản Phẩm</a>
+						<li><a href="\cakecosy/typeProduct/1" ><i class="fa fa-th-list" style="color: white"></i>Danh Mục Sản Phẩm</a>
 							<ul class="sub-menu" style="z-index: 999">
 								<?php foreach ($typeproducts as $type ) { ?>
 								<li><?= $this->Html->link($type->name, ['controller'=>'products','action' => 'typeProduct', $type->id]) ?></li>
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a href="\cakecosy/news"><i style="color: white"></i>Tin tức</a></li>
-						<li><a href="\cakecosy/introducttion"><i class="fa fa-volume-control-phone" style="color: white"></i>Giới thiệu</a></li>
+						<li><a href="\cakecosy/news"><i class="fa fa-id-card-o" style="color: white"></i>Tin tức</a></li>
+						<li><a href="\cakecosy/introducttion"><i class="fa fa-ravelry" style="color: white"></i>Giới thiệu</a></li>
 						<li><a href="\cakecosy/contact"><i class="fa fa-volume-control-phone" style="color: white"></i>Liên Hệ</a></li>
-						
-						 
 					</ul>
 					<div class="clearfix"></div>
 				</nav>
-			</div> <!-- .container -->
-		</div> <!-- .header-bottom -->
+			</div> 
+		</div>
 		<div class="message success " onclick="this.classList.add('hidden') ""></div>
-	</div> <!-- #header -->
+	</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
