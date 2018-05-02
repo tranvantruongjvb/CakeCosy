@@ -80,7 +80,7 @@
 								<div>
 									<?php foreach($listbills as $list): ?>
 										<div class="media">
-											<img width="35%" src="<?php echo '/cakecosy/'.$list['p']['image']?>" alt="" class="pull-left" style=" width: 100px;">
+											<img width="35%" src="<?php echo '/cakecosy/'.$list['p']['image']?>" alt="" class="pull-left" style=" width: 100px;height: 100px">
 											<div class="media-body">
 												<div class="space10">&nbsp;</div>
 												<span class="color-gray your-order-info">Tên sản phẩm: <?php print_r($list['p']['name'])?></span>
