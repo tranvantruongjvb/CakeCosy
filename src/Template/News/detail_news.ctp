@@ -87,7 +87,12 @@
                                         </div>
                                         <div class="space5">&nbsp;&nbsp;</div>
                                     <?php } ?>
-                                    
+                                    <div class="clearfix"></div>
+                                        <div>
+                                            <ul class="pagination">
+                                                <li> <?=  $this->Paginator->numbers(array('class'=> 'pagination_link')); ?></li>
+                                            </ul>
+                                        </div>
                                     <div class="panel" id="tab-description">
                                         <?php if(!$readuser) {?>
                                                 <span>
