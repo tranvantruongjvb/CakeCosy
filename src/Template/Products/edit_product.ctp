@@ -6,19 +6,19 @@ label {
 	border-radius: 15px;
 	height: 200px;
 }
-
+@media (max-width: 320px){
+	input {
+		width: 160px;
+	}
+}
+@media (max-width: 375px) and (min-width: 321px){
+	input {
+		width: 200px;
+	}
+}
 </style>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8  toppad  pull-right col-md-offset-3 ">
-			<br>
-			<p class=" text-info">
-				<?php
-				$date = new DateTime('NOW', new DateTimeZone('Asia/Ho_Chi_Minh'));
-				echo $date->format('Y-m-d H:i:s') . "\n";
-				?>
-			</p>
-		</div>
 		<div class="col-xs-12 col-sm-8 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" style="text-align: center;" >
 			<form method="post" enctype="multipart/form-data" id='myForm'>
 				<div class="panel panel-info">
