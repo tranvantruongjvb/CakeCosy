@@ -60,9 +60,11 @@ class NewsController extends AppController{
 		$c = TableRegistry::get('comments');
 		$query = $c->find('all')
 		->where(['comments.id_news !=' =>0])
-		->order(['comments.id' => 'desc'])
-		-> toArray();
-
+		->order(['comments.id' => 'desc']);
+		$this->paginate= array(
+			'limit' => LIMIT_COMMENT,
+		);
+		$cmt = $this->paginate($query);
 		$this->set('comments',$query);
 	}
 
