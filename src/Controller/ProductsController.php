@@ -55,6 +55,15 @@ class ProductsController  extends AppController{
 				$image = $this->Products->get($key);
 				array_push($product_sale,$image);
 		}
+		$random_new=array_rand($pr,4);
+		$product_new  = array();
+		foreach ($random_new as $key ) {
+				if($key == 0){
+					$key = $count-1;
+				}
+				$image = $this->Products->get($key);
+				array_push($product_new,$image);
+		}
 		$promotion = $this->Products->find("all")
 		->where( ['products.promotion_price >=' => 1])
 		->order(['products.id' => 'DESC']);
@@ -79,7 +88,7 @@ class ProductsController  extends AppController{
 		$price400 = $this->Products->find("all")
 		->where(['products.unit_price >=' => 300000])
 		->limit(LIMIT_PRODUCT_INDEX);
-		$this->set(compact('productnew','promotion_price','price100','price200','price300','price400','slides','product_sale'));
+		$this->set(compact('productnew','promotion_price','price100','price200','price300','price400','slides','product_sale','product_new'));
 	}
 	public function viewMoreProduct($id)
 	{   
