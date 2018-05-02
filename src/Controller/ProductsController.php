@@ -286,7 +286,7 @@ class ProductsController  extends AppController{
 		$customers = $this->paginate($find);
 		$bills = $bill->find('all');
 		$bill_details = $bill_detail->find('all');
-		$this->set(compact('customers','typeproducts'));
+		$this->set(compact('customers','bills','bill_details'));
 	}
 	public function updateStatus($id)
 	{
@@ -391,6 +391,7 @@ class ProductsController  extends AppController{
 		->select(['id', 'name'])
 		->where(['id !=' => 1])
 		->last();
+
 		$get = $get_email->newEntity();
 		$get->email = $req['email'];
 		$get_email->save($get);
@@ -400,6 +401,7 @@ class ProductsController  extends AppController{
 		$bill->total = $totalPrice;
 		$bill->payment = $req['payment_method'];
 		$bill->note = $req['notes'];
+
 		$getbill->save($bill);
 		$billid = $getbill->find()
 		->select(['id'])

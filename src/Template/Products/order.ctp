@@ -64,7 +64,7 @@
 									<?php if ($check) { ?>
 									<?php foreach($read as $cart): ?>
 										<div class="media getkey1">
-											<img width="35%" src="<?php echo '/cakecosy/'.$cart['image']?>" alt=""class="pull-left" style=" width: 100px;">
+											<img width="35%" src="<?php echo '/cakecosy/'.$cart['image']?>" class="pull-left" style=" width: 100px;height: 100px;">
 											<div class="media-body">
 												<?php $total = $cart['quantity'] *  $cart['price'] ?>
 												<p class="font-large"><?php print_r($cart['name'])?></p>
@@ -134,10 +134,10 @@
 				email : "required", 
 			},
 			messages: {
-				full_name: "Please enter name valid",
-				address: "Please Enter Address ",
-				phone :"Please Enter Number Phone",
-				email : "Please Enter Email",
+				full_name: "Nhập họ và tên của bạn để nhận sản phẩm",
+				address: "Nhập địa chỉ bạn có thể nhận hàng	",
+				phone :"Số điện thoại của bạn để có thể liên lạc",
+				email : "Địa chỉ email của bạn ",
 			}
 		}); 
 	});   
