@@ -8,8 +8,8 @@ img{
 }
 </style>
 <div class="container">
-    <div class="col-sm-12 ">
-        <div class="space30">&nbsp;</div>
+    <div class="col-sm-12 " style="height: 500px;" >
+        <div class="space10">&nbsp;</div>
         <div class="col-sm-4 pull-left ">
             <div class="space50">&nbsp;</div>
             <div class="slideshow-container">
@@ -21,12 +21,27 @@ img{
                 <?php } ?>
             </div>
             <br>
-            <div style="text-align:center">
+            <div style="text-align:center" class="hidden">
                 <span class="dot" onclick="currentSlide(0)"></span> 
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span> 
             </div> 
+            <div class="abcde">
+                <?php foreach ($product_new as $key) { ?>
+                <div class="single-item1 col-sm-3" style="height: 50px;">
+                    <span>
+                         <a href="\cakecosy/detailProduct/<?php echo $key['id'] ?>">
+                             <img style=" width: 100px; height: 50px;" src="<?php echo '/cakecosy/'.$key['image'] ?>" >
+                         </a>
+                    </span>
+                    <div class="space10">&nbsp;</div>
+                    <span >
+                         <p><?php echo $key['name'] ?></p>
+                    </span>
+                </div>
+                <?php } ?>
+            </div>
         </div>
        <div id="feature-right" class="col-sm-4 abcde" style="padding-top: 40px;">
             <div id="most-read" >
@@ -43,36 +58,34 @@ img{
                         <span >
                              <p><?php echo $key['name'] ?></p>
                         </span>
-                        
                     </li>
                 <?php } ?>
                 </ul>
             </div>
         </div>
             <div class="category-item col-sm-4 " style="padding-top: 40px;" >
-                    <div class="row clear-fix1 ">
-                            <div class=" col-sm-6 col-xs-6" >
-                            <h3 >Danh mục sản phẩm</h3>
-                            <ul style="color: #767676; list-style: none;" >
-                              <?php foreach ($typeproducts as $type) { ?>
-                            <li>
-                                <a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
-                            </li>
-                            <?php } ?>
-                            </ul>
-                            </div>
-
-                            <div class=" col-sm-6 col-xs-6">
-                            <h3 >Sản phẩm theo giá</h3>
-                            <ul style="color: #767676; list-style: none;"  >
-                                <li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
-                                <li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
-                                <li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
-                                <li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
-                                <li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
-                            </ul>
-                            </div>
+                <div class="row clear-fix1 ">
+                    <div class=" col-sm-6 col-xs-6" >
+                    <h3 >Danh mục sản phẩm</h3>
+                    <ul style="color: #767676; list-style: none;" >
+                      <?php foreach ($typeproducts as $type) { ?>
+                    <li>
+                        <a href="\cakecosy/typeProduct/<?php echo $type->id ?>"><?php echo $type->name ?></a>
+                    </li>
+                    <?php } ?>
+                    </ul>
                     </div>
+                    <div class=" col-sm-6 col-xs-6">
+                    <h3 >Sản phẩm theo giá</h3>
+                    <ul style="color: #767676; list-style: none;"  >
+                        <li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
+                        <li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
+                        <li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
+                        <li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
+                        <li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
+                    </ul>
+                    </div>
+                </div>
         </div>  
 </div>
 <script>
