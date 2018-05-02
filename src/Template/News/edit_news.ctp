@@ -30,7 +30,7 @@
 						</ul>
 					</div>
 					<div class="beta-products-list col-sm-6 ">
-						<form method="post">
+						<form  method="post" id="myForm">
 							<div class="clearfix"></div>
 							<div class="space50">&nbsp;</div>
 							<div class="beta-products-details">
@@ -72,15 +72,21 @@
 										<?php foreach ($image as $key) { ?>
 										<div class="single-item col-sm-6" style="display: inline-block;">
 											<div class="single-item-header abc">
-												<?php if ($readuser['permission'] >=2) {?>
-													<div class="ribbon-wrapper-del del" style="width: 95%;" >
-													<div class="pull-right" style="float: right">
-														<a style=" width: 10px;" href="\cakecosy/news/deleteImage/<?php echo $key['c']['id'] ?>"><i class="fa fa-times"></i>
-														</a>
-													</div>
-												</div>
+												<?php if ($key['c']['image'] == '') { ?>
+													<p >Không có hình ảnh cho bài viết</p>
+												<?php }else { ?>
+
+													<?php if ($readuser['permission'] >=2) {?>
+														<div class="ribbon-wrapper-del del" style="width: 95%;" >
+														<div class="pull-right" style="float: right">
+															<a style=" width: 10px;" href="\cakecosy/news/deleteImage/<?php echo $key['c']['id'] ?>"><i class="fa fa-times"></i>
+															</a>
+														</div>
+														</div>
+													<?php } ?>
+													<img name="img" style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> " >
 												<?php } ?>
-												<img style="border-radius: 10px;" src="<?php echo '/cakecosy/'.$key['c']['image'] ?> " >
+												
 											</div>
 										</div>
 									<?php } ?>
@@ -149,13 +155,13 @@ $(document).ready(function() {
 				title: "required",
 				description: "required",
 				content: "required",
-				
+				img: "required",
 			},
 			messages: {
 				title: "Nhập tiêu đề của bài viết",
 				description :"Miêu tả ngắn về bài viết ",
 				content: "Nhập nội dung của bài viết vủa bạn",
-				
+				img: "Bạn chưa chọn hình ảnh cho bài viết"
 			}
 		}); 
 	});   
