@@ -53,7 +53,8 @@
                                         <span><?php echo $getnews['content'] ?></span>
                                     </div>
                                 </div>
-                             <div class="space10">&nbsp;</div>
+                             <div class="space20">&nbsp;</div>
+                             <p>Hình ảnh: <br></p>
                                 <div>
                                     <?php foreach ($image as $key) { ?>
                                         <div class="single-item col-sm-6" style="display: inline-block;">
@@ -71,7 +72,7 @@
                                 <li><a href="#tab-description">Bình luận</a></li>
                             </ul>
                             <div class="panel" id="tab-description">
-                                <form method="post" action="\cakecosy/news/addComment/<?php echo $getnews['id'] ?>">
+                                <form id="myForm" method="post" action="\cakecosy/news/addComment/<?php echo $getnews['id']?>">
                                     <?php if (count($comments)==0) { ?>
                                         <p>Chưa có bình luận nào. Hãy đăng nhập để bình luận</p>
                                     <?php } ?>
@@ -94,8 +95,8 @@
                                                 </span>
                                         <?php }else {?>
                                                 <span>
-                                                    <input type="text" name="comment" placeholder="Bình để bình luận">
-                                                    <button type="submit" class=" beta-btn primary"> Bình luận</button>
+                                                    <input type="text" name="comment" id="comment" placeholder="Bình để bình luận">
+                                                    <button type="submit" class="beta-btn primary" onclick="cm()"> Bình luận</button>
                                                 </span>
                                         <?php } ?>
                                     </div>
@@ -130,4 +131,16 @@
     </div>
 </div>
 
-
+<script type="text/javascript">
+   $(document).ready(function() {
+        $("#myForm").validate(
+        {
+            rules: {
+                comment: "required",
+            },
+            messages: {
+                comment: "Bạn chưa bình luận gì cho bài viết",
+            }
+        }); 
+    });   
+</script>
