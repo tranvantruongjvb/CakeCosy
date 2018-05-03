@@ -21,10 +21,10 @@ img{
 						<div class="space60">&nbsp;</div>
 						<h4>Sản phẩm Theo giá</h4>
 						<ul class="aside-menu primary-nav">
-							<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/50000">Bánh dưới 100,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/100000">Bánh từ 100,000đ- 200,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/200000">Bánh từ 200,000d - 300,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/300000">Bánh từ 300,000đ</a></li>
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -77,7 +77,7 @@ img{
 											</a>
 											</div>
 											<div class="beta-btn primary">
-												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+												<i class="fa fa-phone" style="font-size: 16px;"> 0978172195</i>
 											</div>
 											<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new['id']])  ?></div>
 											<?php  if ($this->request->session()->read('Auth.User')['permission'] >= 2) {?>
