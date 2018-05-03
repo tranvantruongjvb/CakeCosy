@@ -75,10 +75,10 @@ img{
 										<p class="single-item-title"><?php echo $new['name'] ?></p>
 										<p class="single-item-price" style ="font-size: 16px">
 											<?php if ($new['promotion_price'] == 0) { ?>
-											<span class="flash-sale"><?php echo $new["unit_price"] ?>đồng</span>
+											<span class="flash-sale"><?php echo number_format($new['price_real']) ?> đồng</span>
 											<?php } else {?>
-											<span class="flash-del"><?php echo $new["unit_price"] ?>đồng</span>
-											<span class="flash-sale"><?php echo $new['price_real'] ?>đồng</span>
+											<span class="flash-del"><?php echo $new["unit_price"] ?> đồng</span>
+											<span class="flash-sale"><?php echo number_format($new['price_real']) ?> đồng</span>
 											<?php } ?>
 										</p>
 									</div>

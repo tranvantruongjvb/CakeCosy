@@ -72,12 +72,16 @@ label {
 									</tr>
 									<tr>
 										<td>Giá bán của sản phẩm:</td>
-										<td><input type="text" name="unit_price" id="unit_price" value="<?php echo $product->unit_price ?>"></td>
+										<td><input type="text" name="unit_price" id="unit_price" class="getprice" value="<?php echo number_format($product->unit_price) ?>"></td>
 									</tr>
 									<tr>
 										<td>Giảm giá sản phẩm:</td>
-										<td><input type="hiden" name="promotion_price" id="promotion_price"  value="<?php echo $product->promotion_price ?>" >
+										<td><input type="hiden" name="promotion_price" id="promotion_price" class="getpro"  value="<?php echo number_format($product->promotion_price) ?>" >
 										</td>
+									</tr>
+									<tr>
+										<td >Giá thực tế củn sản phẩm:</td>
+										<td><p class="price_real"><?php echo number_format($product->price_real) ?></p></td>
 									</tr>
 									<tr>
 										<td>Đơn vị :</td>
@@ -117,6 +121,12 @@ label {
 </div>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script type="text/javascript">
+	$(document).on('keyup', '.getpro', function () {
+                   var a = $(this).val();
+                   var b = $(this).parent().parent().parent().find('.getprice').val();
+                   var c = $(this).parent().parent().parent().find('.price_real').empty();
+					   c = $(this).parent().parent().parent().find('.price_real').append(b-a);
+            });
 	$(document).ready(function() {
 		$("#myForm").validate(
 		{

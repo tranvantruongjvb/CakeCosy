@@ -100,7 +100,7 @@
 											<div class="media-body">
 												<span class="beta-sales"><?php echo $new['name'] ?> </span>
 												<br>
-												<span class="flash-sale"><?php echo $new['unit_price'] ?> đồng</span>
+												<span class="flash-sale"><?php echo number_format($new['unit_price']) ?> đồng</span>
 											</div>
 										</div>
 									<?php endforeach; ?>

@@ -160,7 +160,6 @@ class ProductsController  extends AppController{
 		$this->paginate= array(
 		'limit' => LIMIT_DETAIL_PRODUCT,);
 		$products = $this->paginate($find);
-
 		$viewmoreproducts = $products->toArray();
 		$this->set(compact('viewmoreproducts','name'));
 	}
@@ -510,7 +509,8 @@ class ProductsController  extends AppController{
 		$product = $this->Products->newEntity();
 		$this->Products->patchEntity($product,$this->request->data);
 		if($this->request->is('post')) {
-			$data = $this->request->data();           
+			$data = $this->request->data();
+			$product['price_real'] = $data['unit_price'] - $data['promotion_price'];          
 			$name=$data['image'];
 			$dir = WWW_ROOT .'img\uploads\ '. $name['name'] ;
 			$a = move_uploaded_file($data['image']['tmp_name'], $dir);
@@ -557,6 +557,7 @@ class ProductsController  extends AppController{
 				$product['image'] = $image;
 				pr( $product['image']);
 			}
+			$product['price_real'] = $data['unit_price'] - $data['promotion_price'];
 			if ($this->Products->save($product)) {
 				$this->Flash->success(__('Thông tin của sản phẩm đã được cập nhật.')); 
 				return $this-> redirect($this->referer());

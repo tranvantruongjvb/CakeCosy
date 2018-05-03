@@ -28,7 +28,7 @@
 												<span class="flash-sale"><?php print_r($new['unit_price'])?></span>
 												<?php } else {?>
 												<span class="flash-del"><?php print_r($new['unit_price'])?> đồng</span>
-												<span class="flash-sale"><?php print_r($new['promotion_price']) ?>đồng</span>
+												<span class="flash-sale"><?php print_r($new['price_real']) ?>đồng</span>
 												<?php } ?>
 											</p>
 										</div>

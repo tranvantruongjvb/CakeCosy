@@ -54,7 +54,7 @@
 									</tr>
 									<tr>
 										<td>Giá bán của sản phẩm:</td>
-										<td><input type="text" name="unit_price"  placeholder="Enter Price"></td>
+										<td><input type="text" name="unit_price" class="getprice" placeholder="Enter Price"  ></td>
 									</tr>
 									<tr>
 										<td>Đơn vị :</td>
@@ -66,7 +66,11 @@
 								</tr>
 								<tr>
 									<td>Giảm giá sản phẩm:</td>
-									<td><input type="text" name="promotion_price"  placeholder="Nhập giá sản phẩm được giảm giá (không quan trọng)"></td>
+									<td><input type="text" name="promotion_price" class="getpro"  placeholder="Nhập giá giảm của sản phẩm (có thể bỏ qua)"></td>
+								</tr>
+								<tr>
+									<td >Giá thực tế củn sản phẩm:</td>
+									<td><p class="price_real"></p></td>
 								</tr>
 								<tr>
 									<td>Hình ảnh</td>
@@ -92,6 +96,13 @@
 </div>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script type="text/javascript">
+	$(document).on('keyup', '.getpro', function () {
+                   var a = $(this).val();
+                   var b = $(this).parent().parent().parent().find('.getprice').val();
+                   var c = $(this).parent().parent().parent().find('.price_real').empty();
+					   c = $(this).parent().parent().parent().find('.price_real').append((b-a).toLocaleString('de-DE'));
+            });
+	
 	$(document).ready(function() {
 		$("#myForm").validate(
 		{

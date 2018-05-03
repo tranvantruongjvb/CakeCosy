@@ -21,7 +21,6 @@ img{
 						<div class="space60">&nbsp;</div>
 						<h4>Sản phẩm Theo giá</h4>
 						<ul class="aside-menu primary-nav">
-							<li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
 							<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
 							<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
 							<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
@@ -64,10 +63,10 @@ img{
 										<p class="single-item-title"><?php echo $new['name'] ?></p>
 										<p class="single-item-price" style ="font-size: 16px">
 											<?php if ($new['promotion_price'] == 0) { ?>
-											<span class="flash-sale"><?php echo $new["unit_price"] ?>đồng</span>
+											<span class="flash-sale"><?php echo number_format($new['price_real']) ?> đồng</span>
 											<?php } else {?>
-											<span class="flash-del"><?php echo $new["unit_price"] ?>đồng</span>
-											<span class="flash-sale"><?php echo $new['price_real'] ?>đồng</span>
+											<span class="flash-del"><?php echo $new["unit_price"] ?> đồng</span>
+											<span class="flash-sale"><?php echo number_format($new['price_real']) ?> đồng</span>
 											<?php } ?>
 										</p>
 									</div>

@@ -52,6 +52,10 @@
                                     <div>
                                         <span><?php echo $getnews['content'] ?></span>
                                     </div>
+                                    <div class="space20">&nbsp;</div>
+                                    <h2 class="contact-title">Liên hệ để đặt bánh</h3>
+                                    <p>Điện thoại: 0978 172 195, Email: tranvantruong.jvb@gmail.com.vn,</p>
+                                    <p>Website: www.CakeFood.vn</p>
                                 </div>
                              <div class="space20">&nbsp;</div>
                              <p>Hình ảnh: <br></p>
@@ -112,7 +116,7 @@
                     </div>  
                     <div class="col-xs-3 col-sm-3 aside  abcde" style="float: right;padding-top: 50px;">
                         <div class="widget">
-                            <h3 class="widget-title">Sản Phẩm Nhiều Người Mua Nhất</h3>
+                            <h3 class="widget-title" style="color: #f90">Sản Phẩm Nhiều Người Mua Nhất</h3>
                             <div class="widget-body">
                                 <div class="beta-sales beta-lists">
                                     <?php foreach($product_sale as $new): ?> 
