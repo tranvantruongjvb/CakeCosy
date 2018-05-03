@@ -38,7 +38,7 @@ img {
 								<span class="flash-sale"><?php echo $products->unit_price ?></span>
 								<?php } else { ?>
 								<span class="flash-del"><?php echo $products->unit_price ?> đồng</span>
-								<span class="flash-sale"><?php echo $products->promotion_price ?> đồng</span>
+								<span class="flash-sale"><?php echo $products->price_real ?> đồng</span>
 								<?php } ?>
 							</p>
 						</div>
@@ -124,7 +124,7 @@ img {
 										<span class="flash-sale"><?php echo $sptt->unit_price ?>đồng</span>
 										<?php }else {?>
 										<span class="flash-del"><?php echo $sptt->unit_price ?>đồng</span>
-										<span class="flash-sale"><?php echo $sptt->promotion_price ?>đồng</span>
+										<span class="flash-sale"><?php echo $sptt->price_real ?>đồng</span>
 										<?php } ?>
 									</p>
 								</div>
@@ -167,7 +167,7 @@ img {
 										<a class="pull-left" href="<?php echo $new->id ?>"><img src="<?php echo '/cakecosy/'.$new->image ?>" height="250px" ></a>
 										<div class="media-body">
 											<span class="beta-sales"><?php echo $new->name ?> </span>
-											<span class="flash-sale"><?php echo $new->unit_price ?> đồng</span>
+											<span class="flash-sale"><?php echo $new->price_real ?> đồng</span>
 										</div>
 									</div>
 								<?php endforeach; ?>

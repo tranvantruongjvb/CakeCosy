@@ -32,7 +32,7 @@ img{
 						<div class="beta-products-list">
 							<div class="row"></div>
 							<div style="padding-right: 35px;">
-								<form  action="\cakecosy/typeProduct/<?php echo $typeproducts['0']['id'] ?>" method="post">
+								<form action="\cakecosy/typeProduct/<?php echo $getproduct['0']['id_type'] ?>" method="post">
 										<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>Xem Thêm Sản Phẩm
 											<span class="pull-right" style="font-size: 15px; text-align: center;">
 												<button type="submit"  style="background: #ffffff; border: 1px solid #ff8d00;    border-radius: 5px; height: 20px;">Lọc theo</button>
@@ -67,7 +67,7 @@ img{
 											<span class="flash-sale"><?php echo $new["unit_price"] ?>đồng</span>
 											<?php } else {?>
 											<span class="flash-del"><?php echo $new["unit_price"] ?>đồng</span>
-											<span class="flash-sale"><?php echo $new['promotion_price'] ?>đồng</span>
+											<span class="flash-sale"><?php echo $new['price_real'] ?>đồng</span>
 											<?php } ?>
 										</p>
 									</div>

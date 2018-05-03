@@ -9,7 +9,17 @@ img{
 			<div class="space60">&nbsp;</div>
 			<div class="row">
 				<div style="padding-right: 35px;">
-					<form  action="\cakecosy/viewMoreProduct/<?php echo $viewmoreproducts['0']['unit_price'] ?>" method="post">
+					<?php $pr = $viewmoreproducts['0']['unit_price'] ?>
+					<?php if ( 0 <$pr && $pr <100000) {?>
+						<?php $cost = 50000 ?>
+					<?php }else if ( 100000 <=$pr && $pr <200000) {?>
+						<?php $cost = 100000 ?>
+					<?php }else if ( 200000<=$pr && $pr <300000) {?>
+						<?php $cost = 200000 ?>
+					<?php }else if ($pr >=300000) {?>
+						<?php $cost = 300000 ?>
+					<?php } ?> 
+					<form  action="\cakecosy/viewMoreProduct/<?php echo $cost ?>" method="post">
 							<h4 style="color: #f90; font-size: 22px"><i class="fa fa-mail-forward"></i>Xem Thêm Sản Phẩm
 								<span class="pull-right" style="font-size: 15px; text-align: center;">
 									<button type="submit"  style="background: #ffffff; border: 1px solid #ff8d00;    border-radius: 5px; height: 20px;">Lọc theo</button>
@@ -36,16 +46,19 @@ img{
 						<div class="space60">&nbsp;</div>
 						<h4>Sản phẩm Theo giá</h4>
 						<ul class="aside-menu primary-nav">
-							<li><a href="\cakecosy/viewMoreProduct/11">Sản phẩm khuyến mãi</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/80000">Bánh dưới 100,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/180000">Bánh từ 100,000đ- 200,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/280000">Bánh từ 200,000d - 300,000đ</a></li>
-							<li><a href="\cakecosy/viewMoreProduct/310000">Bánh từ 300,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/50000">Bánh dưới 100,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/100000">Bánh từ 100,000đ- 200,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/200000">Bánh từ 200,000d - 300,000đ</a></li>
+							<li><a href="\cakecosy/viewMoreProduct/300000">Bánh từ 300,000đ</a></li>
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 						<div class="beta-products-list">
-							<div class="row"></div>
+							<div class="row">
+								<div style="float: left;">
+									<p style="font-size: 16px;padding-left: 20px;padding-bottom: 17px; color: #f90"><?php echo $name ?></p>
+								</div>
+							</div>
 							<?php foreach($viewmoreproducts as $new): 
 							?>
 							<div class="col-xs-10 col-sm-6 col-md-4 col-lg-4">
@@ -65,7 +78,7 @@ img{
 											<span class="flash-sale"><?php echo $new["unit_price"] ?>đồng</span>
 											<?php } else {?>
 											<span class="flash-del"><?php echo $new["unit_price"] ?>đồng</span>
-											<span class="flash-sale"><?php echo $new['promotion_price'] ?>đồng</span>
+											<span class="flash-sale"><?php echo $new['price_real'] ?>đồng</span>
 											<?php } ?>
 										</p>
 									</div>
