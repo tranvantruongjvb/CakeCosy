@@ -89,7 +89,7 @@ img{
 											</a>
 											</div>
 											<div class="beta-btn primary">
-												<i class="fa fa-phone" style="font-size: 16px;"> Hotline: 0978172195</i>
+												<i class="fa fa-phone" style="font-size: 16px;"> 0978172195</i>
 											</div>
 											<div class="beta-btn primary"><?php echo $this->Html->link('Chi tiết',['action'=>'detailProduct',$new['id']])  ?></div>
 											<?php  if ($this->request->session()->read('Auth.User')['permission'] >= 2) {?>
